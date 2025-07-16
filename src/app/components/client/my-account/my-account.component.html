@@ -1,0 +1,76 @@
+<!-- Main  -->
+<div class="container justify-content-center mb-4 py-4" style="margin-top: 76px;">
+    <div class="card">
+        <div class="card-header">
+            Gestión de Perfil
+        </div>
+        <div class="card-body">
+
+            <div class="row justify-content-center w-100"> <!-- w-100 para que ocupe el ancho disponible -->
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5"> <!-- Ajusta columnas para controlar el ancho -->
+
+                    <div class="card shadow login-card">
+                        <div class="card-body p-4">
+                            <h4 class="text-center text-secondary mb-4">Perfil de Usuario</h4>
+
+                            <form [formGroup]="formAccount" (ngSubmit)="onSubmit()">
+
+                                <div class="mb-3">
+                                    <label class="form-label">Nombre completo</label>
+                                    <input type="text" class="form-control"
+                                        [class.is-invalid]="formAccount.get('nombreCompleto')?.invalid && formAccount.get('nombreCompleto')?.touched"
+                                        id="nombreCompleto" formControlName="nombreCompleto">
+                                    <div class="invalid-feedback"
+                                        *ngIf="formAccount.get('nombreCompleto')?.invalid && formAccount.get('nombreCompleto')?.touched|| submitted">
+                                        Por favor ingrese su nombre completo
+                                    </div>
+                                </div>
+
+                                <input type="text" class="form-control"
+                                    [class.is-invalid]="formAccount.get('nombreUsuario')?.invalid && formAccount.get('nombreUsuario')?.touched"
+                                    id="nombreUsuario" formControlName="nombreUsuario">
+                                <div class="invalid-feedback"
+                                    *ngIf="formAccount.get('nombreUsuario')?.invalid && formAccount.get('nombreUsuario')?.touched|| submitted">
+                                    Por favor ingrese su nombre de usuario
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="correo" value="usuario@correo.cl"
+                                        disabled>
+                                    <div class="invalid-feedback">
+                                        Por favor ingrese correo valido.
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Rol</label>
+                                    <select class="form-select" aria-label="" disabled>
+                                        <option selected disabled>Seleccione una opción</option>
+                                        <option value="2" selected>USUARIO</option>
+                                        <option value="3">EDITOR</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Por favor ingrese correo valido.
+                                    </div>
+                                </div>
+
+                                <div class="d-grid mb-3">
+                                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                                </div>
+
+                                <hr>
+
+                                <div class="d-grid mb-3">
+                                    <a routerLink="/cliente/index" type="button"
+                                        class="btn btn-outline-secondary">Regresar</a>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

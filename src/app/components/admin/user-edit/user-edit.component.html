@@ -1,0 +1,85 @@
+<!-- Main  -->
+<div class="container justify-content-center mb-4 py-4" style="margin-top: 76px;">
+    <div class="card">
+        <div class="card-header">
+            Gestión de Perfil
+        </div>
+        <div class="card-body">
+
+            <div class="row justify-content-center w-100"> <!-- w-100 para que ocupar el ancho disponible -->
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5"> <!-- Ajustar columnas para controlar el ancho -->
+
+                    <div class="card shadow login-card">
+                        <div class="card-body p-4">
+                            <h4 class="text-center text-secondary mb-4">Perfil de Usuario</h4>
+
+                            <form [formGroup]="formAccount" (ngSubmit)="onSubmit()">
+
+                                <div class="mb-3">
+                                    <label for="fullName" class="form-label">Nombre completo</label>
+                                    <input type="text" id="fullName" formControlName="fullName" class="form-control"
+                                        [class.is-invalid]="formAccount.get('fullName')?.invalid && (formAccount.get('fullName')?.touched || submitted)">
+                                    <div class="invalid-feedback"
+                                        *ngIf="formAccount.get('fullName')?.invalid && (formAccount.get('fullName')?.touched || submitted)">
+                                        Por favor ingrese su nombre completo
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="userName" class="form-label">Nombre de usuario</label>
+                                    <input type="text" id="userName" formControlName="userName" class="form-control"
+                                        [class.is-invalid]="formAccount.get('userName')?.invalid && (formAccount.get('userName')?.touched || submitted)">
+                                    <div class="invalid-feedback"
+                                        *ngIf="formAccount.get('userName')?.invalid && (formAccount.get('userName')?.touched || submitted)">
+                                        Por favor ingrese su nombre de usuario
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="text" id="email" formControlName="email" class="form-control"
+                                        [class.is-invalid]="formAccount.get('email')?.invalid && (formAccount.get('email')?.touched || submitted)">
+                                    <div class="invalid-feedback"
+                                        *ngIf="formAccount.get('email')?.invalid && (formAccount.get('email')?.touched || submitted)">
+                                        Por favor ingrese email
+                                    </div>
+                                </div>
+
+
+
+                                <div class="mb-3">
+                                    <label class="form-label">Rol</label>
+                                    <select class="form-select" formControlName="role">
+                                        <option disabled value="">Seleccione una opción</option>
+                                        <option value="ADMIN">ADMIN</option>
+                                        <option value="USUARIO">USUARIO</option>
+                                        <option value="EDITOR">EDITOR</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Por favor ingrese rol válido.
+                                    </div>
+                                </div>
+
+
+                                <div class="d-grid mb-3">
+                                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                                </div>
+
+                                <hr>
+
+
+                                <div class="d-grid mb-3">
+                                    <a [routerLink]="['/admin/users']" type="button"
+                                        class="btn btn-outline-secondary">Regresar</a>
+
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

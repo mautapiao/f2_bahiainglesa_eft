@@ -1,0 +1,411 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>bahiainglesa-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">bahiainglesa-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  PlayasComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/playas/playas.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente que muestra la sección de información de playas de la zona.</p>
+<p>Actualmente es un componente base sin lógica interna,
+pero puede ser ampliado para cargar lugares turisticos desde una API.</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-playas</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./playas.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./playas.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+/**
+ * Componente que muestra la sección de información de playas de la zona.
+ * 
+ * Actualmente es un componente base sin lógica interna,
+ * pero puede ser ampliado para cargar lugares turisticos desde una API.
+ */
+
+@Component({
+  selector: &#x27;app-playas&#x27;,
+  imports: [],
+  templateUrl: &#x27;./playas.component.html&#x27;,
+  styleUrl: &#x27;./playas.component.scss&#x27;
+})
+export class PlayasComponent {
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section id&#x3D;&quot;inicio&quot; class&#x3D;&quot;hero-section rounded mb-5 text-center fade-in-up-new position-relative overflow-hidden&quot;
+    style&#x3D;&quot;background-image: url(&#x27;img/playas.png&#x27;); background-size: cover; background-position: center; min-height: 400px;&quot;&gt;
+    &lt;div class&#x3D;&quot;position-absolute top-0 start-0 w-100 h-100&quot; style&#x3D;&quot;background: rgba(44, 62, 80, 0.55);&quot;&gt;&lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;container position-relative text-white py-5&quot;&gt;
+        &lt;h1 class&#x3D;&quot;display-4 fw-bold mb-3&quot;&gt;Playas&lt;/h1&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section id&#x3D;&quot;playas-atacama&quot; class&#x3D;&quot;my-5&quot;&gt;
+    &lt;div class&#x3D;&quot;container&quot;&gt;
+        &lt;h2 class&#x3D;&quot;text-secondary fw-bold mb-4&quot;&gt;Playas de la Región de Atacama&lt;/h2&gt;
+
+        &lt;p class&#x3D;&quot;text-muted fs-5&quot;&gt;
+            La Región de Atacama, ubicada en el norte de Chile, sorprende a los viajeros con un litoral
+            de aguas turquesa, arenas blancas y un clima privilegiado durante todo el año. Sus playas se
+            han transformado en un destino favorito tanto para turistas nacionales como internacionales.
+            Aquí te presentamos las principales joyas del litoral atacameño.
+        &lt;/p&gt;
+
+        &lt;h4 class&#x3D;&quot;fw-bold text-primary mt-4&quot;&gt;🌊 Bahía Inglesa&lt;/h4&gt;
+        &lt;p class&#x3D;&quot;text-muted&quot;&gt;
+            Considerada el principal destino turístico de la región, &lt;strong&gt;Bahía Inglesa&lt;/strong&gt;
+            deslumbra con su arena blanca, aguas color turquesa y ambiente relajado. Es ideal para
+            familias, amantes del sol y quienes buscan disfrutar de buena gastronomía marina frente al
+            mar. Cuenta con una variada oferta de hospedaje, servicios turísticos, paseos en lancha,
+            alquiler de kayak y actividades acuáticas. A tan solo 6 km de Caldera, es una parada
+            imperdible.
+        &lt;/p&gt;
+
+        &lt;h5 class&#x3D;&quot;fw-semibold text-secondary mt-4&quot;&gt;🏖️ Playa La Virgen&lt;/h5&gt;
+        &lt;p class&#x3D;&quot;text-muted&quot;&gt;
+            Ubicada al sur de Bahía Inglesa, esta playa es una de las más fotogénicas de Chile. Sus
+            aguas tranquilas y color esmeralda atraen a quienes buscan un entorno más natural y menos
+            urbanizado. Cuenta con zonas de camping y cabañas, y su acceso está controlado para
+            preservar el ecosistema.
+        &lt;/p&gt;
+
+        &lt;h5 class&#x3D;&quot;fw-semibold text-secondary mt-4&quot;&gt;🏖️ Playa Blanca&lt;/h5&gt;
+        &lt;p class&#x3D;&quot;text-muted&quot;&gt;
+            Como su nombre lo indica, destaca por su arena blanca y fina. Es una playa más extensa y
+            perfecta para largas caminatas o descansar lejos de multitudes. Sus aguas son calmas y
+            seguras para bañistas.
+        &lt;/p&gt;
+
+        &lt;h5 class&#x3D;&quot;fw-semibold text-secondary mt-4&quot;&gt;🏖️ Playa Las Machas&lt;/h5&gt;
+        &lt;p class&#x3D;&quot;text-muted&quot;&gt;
+            Extensa y abierta, es ideal para quienes practican deportes como surf, bodyboard o kitesurf.
+            Se encuentra entre Bahía Inglesa y Caldera, y aunque es menos concurrida, ofrece atardeceres
+            espectaculares y espacio de sobra para disfrutar en tranquilidad.
+        &lt;/p&gt;
+
+        &lt;h5 class&#x3D;&quot;fw-semibold text-secondary mt-4&quot;&gt;🏖️ Playa Portofino&lt;/h5&gt;
+        &lt;p class&#x3D;&quot;text-muted&quot;&gt;
+            Un balneario más alejado y tranquilo, ideal para quienes desean desconectarse. Aunque su
+            acceso es más limitado, el paisaje natural y la paz del entorno la hacen ideal para viajeros
+            aventureros o en ruta hacia el norte.
+        &lt;/p&gt;
+
+        &lt;h5 class&#x3D;&quot;fw-semibold text-secondary mt-4&quot;&gt;🏖️ Playa Loreto&lt;/h5&gt;
+        &lt;p class&#x3D;&quot;text-muted&quot;&gt;
+            Cercana a Caldera, esta pequeña playa es muy frecuentada por familias locales. Tiene
+            formaciones rocosas que crean piscinas naturales, perfectas para niños o para descansar del
+            oleaje.
+        &lt;/p&gt;
+
+        &lt;div class&#x3D;&quot;alert alert-warning mt-5&quot;&gt;
+            🌞 &lt;strong&gt;Consejo:&lt;/strong&gt; Todas estas playas están en una zona desértica, así que no
+            olvides llevar protección solar, agua y respetar el entorno natural. ¡Disfruta y cuida este
+            paraíso costero!
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section id="inicio" class="hero-section rounded mb-5 text-center fade-in-up-new position-relative overflow-hidden"    style="background-image: url(\'img/playas.png\'); background-size: cover; background-position: center; min-height: 400px;">    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(44, 62, 80, 0.55);"></div>    <div class="container position-relative text-white py-5">        <h1 class="display-4 fw-bold mb-3">Playas</h1>    </div></section><section id="playas-atacama" class="my-5">    <div class="container">        <h2 class="text-secondary fw-bold mb-4">Playas de la Región de Atacama</h2>        <p class="text-muted fs-5">            La Región de Atacama, ubicada en el norte de Chile, sorprende a los viajeros con un litoral            de aguas turquesa, arenas blancas y un clima privilegiado durante todo el año. Sus playas se            han transformado en un destino favorito tanto para turistas nacionales como internacionales.            Aquí te presentamos las principales joyas del litoral atacameño.        </p>        <h4 class="fw-bold text-primary mt-4">🌊 Bahía Inglesa</h4>        <p class="text-muted">            Considerada el principal destino turístico de la región, <strong>Bahía Inglesa</strong>            deslumbra con su arena blanca, aguas color turquesa y ambiente relajado. Es ideal para            familias, amantes del sol y quienes buscan disfrutar de buena gastronomía marina frente al            mar. Cuenta con una variada oferta de hospedaje, servicios turísticos, paseos en lancha,            alquiler de kayak y actividades acuáticas. A tan solo 6 km de Caldera, es una parada            imperdible.        </p>        <h5 class="fw-semibold text-secondary mt-4">🏖️ Playa La Virgen</h5>        <p class="text-muted">            Ubicada al sur de Bahía Inglesa, esta playa es una de las más fotogénicas de Chile. Sus            aguas tranquilas y color esmeralda atraen a quienes buscan un entorno más natural y menos            urbanizado. Cuenta con zonas de camping y cabañas, y su acceso está controlado para            preservar el ecosistema.        </p>        <h5 class="fw-semibold text-secondary mt-4">🏖️ Playa Blanca</h5>        <p class="text-muted">            Como su nombre lo indica, destaca por su arena blanca y fina. Es una playa más extensa y            perfecta para largas caminatas o descansar lejos de multitudes. Sus aguas son calmas y            seguras para bañistas.        </p>        <h5 class="fw-semibold text-secondary mt-4">🏖️ Playa Las Machas</h5>        <p class="text-muted">            Extensa y abierta, es ideal para quienes practican deportes como surf, bodyboard o kitesurf.            Se encuentra entre Bahía Inglesa y Caldera, y aunque es menos concurrida, ofrece atardeceres            espectaculares y espacio de sobra para disfrutar en tranquilidad.        </p>        <h5 class="fw-semibold text-secondary mt-4">🏖️ Playa Portofino</h5>        <p class="text-muted">            Un balneario más alejado y tranquilo, ideal para quienes desean desconectarse. Aunque su            acceso es más limitado, el paisaje natural y la paz del entorno la hacen ideal para viajeros            aventureros o en ruta hacia el norte.        </p>        <h5 class="fw-semibold text-secondary mt-4">🏖️ Playa Loreto</h5>        <p class="text-muted">            Cercana a Caldera, esta pequeña playa es muy frecuentada por familias locales. Tiene            formaciones rocosas que crean piscinas naturales, perfectas para niños o para descansar del            oleaje.        </p>        <div class="alert alert-warning mt-5">            🌞 <strong>Consejo:</strong> Todas estas playas están en una zona desértica, así que no            olvides llevar protección solar, agua y respetar el entorno natural. ¡Disfruta y cuida este            paraíso costero!        </div>    </div></section></div>'
+    var COMPONENTS = [{'name': 'AdminAdsComponent', 'selector': 'app-admin-ads'},{'name': 'AdminAdsEditComponent', 'selector': 'app-admin-ads-edit'},{'name': 'AdminCategoryComponent', 'selector': 'app-admin-category'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AdminLayoutComponent', 'selector': 'app-admin-layout'},{'name': 'AdminPlansComponent', 'selector': 'app-admin-plans'},{'name': 'AdminPostComponent', 'selector': 'app-admin-post'},{'name': 'AdminUserComponent', 'selector': 'app-admin-user'},{'name': 'AdscreateComponent', 'selector': 'app-adscreate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthLayoutComponent', 'selector': 'app-auth-layout'},{'name': 'AvailablePlansComponent', 'selector': 'app-available-plans'},{'name': 'AvisosComponent', 'selector': 'app-avisos'},{'name': 'BienvenidosComponent', 'selector': 'app-bienvenidos'},{'name': 'CalltoactionComponent', 'selector': 'app-calltoaction'},{'name': 'ClientHomeComponent', 'selector': 'app-client-home'},{'name': 'ClientLayoutComponent', 'selector': 'app-client-layout'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeroBahiaComponent', 'selector': 'app-hero-bahia'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainContentComponent', 'selector': 'app-main-content'},{'name': 'MainLayoutComponent', 'selector': 'app-main-layout'},{'name': 'MyAccountComponent', 'selector': 'app-my-account'},{'name': 'MyAdsComponent', 'selector': 'app-my-ads'},{'name': 'NoticiasComponent', 'selector': 'app-noticias'},{'name': 'PlayasComponent', 'selector': 'app-playas'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'RecoveryComponent', 'selector': 'app-recovery'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RestaurantsComponent', 'selector': 'app-restaurants'},{'name': 'RightColumnComponent', 'selector': 'app-right-column'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'ToursComponent', 'selector': 'app-tours'},{'name': 'UserEditComponent', 'selector': 'app-user-edit'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'PlayasComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'PlayasComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

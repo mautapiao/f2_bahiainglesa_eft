@@ -1,0 +1,31 @@
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top floating-nav shadow-sm">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" [routerLink]="'/'">
+            <i class="fas fa-umbrella-beach text-primary me-2 fs-3"></i>
+            <span class="fs-3 fw-bold">Bahía Inglesa</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/'">Portal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/cliente/index">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'/'"><i class="fa-regular fa-circle-xmark"></i> Cerrar
+                        Sessión</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="client-wrapper">
+    <router-outlet></router-outlet>
+</div>

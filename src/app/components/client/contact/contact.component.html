@@ -1,0 +1,63 @@
+<div class="container justify-content-center mb-4 py-4" style="margin-top: 76px;">
+    <div class="card">
+        <div class="card-header">
+            Gestión de Perfil
+        </div>
+        <div class="card-body">
+
+            <div class="row justify-content-center w-100"> <!-- w-100 para que ocupe el ancho disponible -->
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5"> <!-- Ajusta columnas para controlar el ancho -->
+
+                    <div class="container mt-4">
+                        <h2>Formulario de Contacto</h2>
+
+                        <form #miFormulario="ngForm" (ngSubmit)="enviarFormulario(miFormulario)" #contactForm="ngForm" novalidate>
+
+                            <!-- Nombre -->
+                            <div class="mb-3">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" name="nombre" [(ngModel)]="contact.name" required minlength="3"
+                                    class="form-control" #nombreInput="ngModel" >
+                                <div class="text-danger" *ngIf="nombreInput.invalid && nombreInput.touched">
+                                    El nombre es obligatorio y debe tener al menos 3 caracteres.
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <label class="form-label">Correo</label>
+                                <input type="email" name="email" [(ngModel)]="contact.email" required
+                                    class="form-control" #emailInput="ngModel" >
+                                <div class="text-danger" *ngIf="emailInput.invalid && emailInput.touched">
+                                    Ingresa un correo válido.
+                                </div>
+                            </div>
+
+                            <!-- Mensaje -->
+                            <div class="mb-3">
+                                <label class="form-label">Mensaje</label>
+                                <textarea name="mensaje" [(ngModel)]="contact.menssage" required class="form-control"
+                                    #mensajeInput="ngModel" rows="3"></textarea>
+                                <div class="text-danger" *ngIf="mensajeInput.invalid && mensajeInput.touched">
+                                    El mensaje es obligatorio.
+                                </div>
+                            </div>
+
+                            <!-- Botón -->
+                            <button class="btn btn-primary" type="submit"
+                                [disabled]="contactForm.invalid">Enviar</button>
+                        </form>
+
+                        <!-- Vista previa -->
+                        <div class="mt-4">
+                            <h5>Datos que serán enviados:</h5>
+                            <pre>{{ contact | json }}</pre>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

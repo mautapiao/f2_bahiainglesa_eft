@@ -1,0 +1,257 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>bahiainglesa-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">bahiainglesa-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1>FULLSTACK II SEMANA 8 PORTAL BAHÍA INGLESA</h1>
+<p align="center">
+  <img src="public/img/logo_bahia.png" alt="Logo" width="250">
+</p>
+
+<div style="text-align:center;">
+  Bahía Inglesa, el verano se vive la Región de Atacama!
+</div>
+
+<h2>Descripción de la Actividad</h2>
+<p>En esta octava semana realizarán la actividad sumativa de la Experiencia 3 de esta asignatura mediante dos instancias. Para la primera parte de manera individual deberán aplicar a nuestra UI el consumo de una API Rest con todos sus métodos a fin de poder manipular la información en la aplicación FrontEnd desarrollada en la actividad sumativa 2 junto con el despliegue en Cloud del mismo. Para la segunda parte deberán grabar un video mencionando las características asociadas a su tema y la ejecución del mismo en el Cloud mostrando todas las funcionalidades requeridas.  </p>
+<h2>Objetivos</h2>
+<h3>Parte I: Documentación</h3>
+<ol>
+<li>   Deberás entregar en un archivo comprimido (.rar o .zip) la aplicación creada. El comprimido deberá contener el código fuente de la aplicación y compartir el repositorio de GitHub y su tablero de Trello.  </li>
+<li>   Recuerda que deben seguir con la temática elegida para la actividad sumativa 2 de la semana 6, pero ahora deben incluir el consumo de datos a través de archivos JSON. </li>
+<li>   La aplicación FrontEnd creada debe cumplir con los siguientes aspectos:</li>
+</ol>
+<p> </p>
+<p>•	Uso de Angular para la construcción del front-end en sus versiones más actuales. Incluyendo todo lo solicitado en la sumativa 2. 
+•	La aplicación debe consumir información de al menos un archivo JSON y manipularlo mediante los métodos GET, POST, PUT y DELETE tal como se explica en la guía. Recuerden subir los archivos a GitHub Pages.. 
+•	Manejo y organización del trabajo grupal utilizando herramientas colaborativas y de repositorios en GIT. 
+•	Deben subir su aplicación a Docker Lab para la creación de la imagen, el contendor y su despliegue en Cloud.  </p>
+<ol start="4">
+<li>   Es importante recordar lo siguiente:</li>
+</ol>
+<p>a)	Para delimitar su aplicación y el alcance de esta, es necesario que el caso que seleccionen cumpla con las siguientes características generales:   </p>
+<p>•	Los casos seleccionados pueden ser similares más no iguales, por tanto, se recomienda durante la primera semana seleccionar el tema de desarrollo y subir esta información al AVA con una breve explicación de lo que se desea armar (Foro de Consultas de la Semana 1). Esto con el fin que el docente pueda ayudarlos a concretar y delimitar su desarrollo, así como aportar sugerencias.  
+•	La aplicación FrontEnd debe contar con al menos 2 roles o tipos de usuarios que posean privilegios diferentes y que sean manipulados por la aplicación. Es importante destacar que pueden tener más roles si desead y aclarar que pueden existir varios usuarios de la aplicación con el mismo rol o tipo de usuario asignado.   
+•	Para el diseño de la aplicación FrontEnd, deberás elegir los colores, logos, nombre e imágenes a implementar en su desarrollo. Pueden guiarse de páginas ya existentes, pero sin dejar de lado su originalidad. También pueden usar cualquier herramienta de diseño de imágenes como Photoshop, gimp, illustrator o que estén en la web.   
+•	Todas deben contar con las siguientes páginas:    
+-	Inicio de sesión.   
+-	Registro de usuarios.   
+-	Recuperar contraseña.    
+-	Modificación de perfil.    
+•	Adicionalmente, deberás generar páginas internas para dar respuesta a las funcionalidades del sistema dependiendo del tema elegido (se dan más detalles en el apartado de temáticas).   
+•	En cuanto a las contraseñas, se deberán proporcionar al menos 4 validaciones de seguridad de estas para protección tales como longitud mínima, uso de caracteres especiales, uso de números y letras, longitud máxima o alguna otra que considere esencial.   
+•	En cuanto a los formularios, todos deben tener sus validaciones correspondientes para cada campo, puede guiarse de cualquier aplicación donde se haya registrado para usar las validaciones necesarias.   
+•	No se debe implementar sistemas de pagos como webPay u otros, si el sistema lo requiere simular un pago del cliente con páginas que solo reflejen que el pago del monto asociado se ha realizado con éxito.  </p>
+<h2>Parte II: Presentación.</h2>
+<ul>
+<li>Deberás realizar la presentación de tu aplicación mediante la grabación de un video (en la herramienta de Kaltura), mostrando la subida a Docker Lab, la ejecución y explicando el funcionamiento en tiempo real en el Cloud, características, diseño, funcionalidades y navegando entre todas las pantallas realizadas para el consumo de los archivos JSON (tanto su código como su ejecución).</li>
+</ul>
+<h2>Nombre del proyecto</h2>
+<ul>
+<li>Portal Web Bahía Inglesa, noticias y gestión de anuncios</li>
+</ul>
+<h2>Roles</h2>
+<ul>
+<li>Administrador (ADMIN)</li>
+<li>Usuario (USER)</li>
+</ul>
+<h2>Acceso</h2>
+<ul>
+<li><a href="mailto:admin@bahiainglesa.cl">admin@bahiainglesa.cl</a> (123456)</li>
+<li><a href="mailto:usuario@gmail.com">usuario@gmail.com</a> (123456)</li>
+</ul>
+<h2>Servicios de Anuncios</h2>
+<ul>
+<li>Restaurant</li>
+<li>Eventos</li>
+<li>Tour</li>
+<li>Alojamiento</li>
+</ul>
+<h2>Stack Utilizado</h2>
+<ul>
+<li>HTML</li>
+<li>Javascript</li>
+<li>Css</li>
+<li>Logo Genspark</li>
+<li>Visual Studio Code</li>
+<li>Extenciones Live Preview Microsoft</li>
+<li>Bootstrap 5.3</li>
+<li>Fontawesome 6.7.2</li>
+</ul>
+<h2>Git y Trello</h2>
+<ul>
+<li>Los links relacionados se comparten en AVA</li>
+</ul>
+<h2>Conclusiones</h2>
+<p>El ejercicio cumple satisfactoriamente con los objetivos planteados en la tarea, los datos son ficticios y no son almacenados en algún tipo de base de datos.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

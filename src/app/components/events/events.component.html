@@ -1,0 +1,23 @@
+<section id="eventos" class="mb-5 fade-in-up-new">
+  <h3 class="mb-4 text-secondary">Eventos Turísticos</h3>
+  <div class="row g-4">
+    <div class="col-12 col-md-6" *ngFor="let e of eventos">
+      <div class="card destination-card card-hover fade-in-up-new">
+        <div
+          class="card-header bg-gradient p-0"
+          style="height: 200px; overflow: hidden;"
+          [ngStyle]="e.fondo ? {'background': e.fondo} : {}"
+        >
+          <img [src]="e.imagen" [alt]="e.alt" class="w-100 h-100 object-fit-cover">
+        </div>
+        <div class="card-body">
+          <p class="text-muted mb-3">{{ e.descripcion }}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="h5 price-highlight mb-0">{{ e.fecha }}</span>
+            <button class="btn btn-primary">Ver más</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

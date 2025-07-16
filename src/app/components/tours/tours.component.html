@@ -1,0 +1,20 @@
+<!-- Sección Tours -->
+<section id="tours" class="mb-5 fade-in-up-new">
+    <h3 class="mb-4 text-secondary">Tours Populares</h3>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="row g-4">
+                <div class="col-12 col-md-4" *ngFor="let t of tours">
+                    <div class="tour-card fade-in-up-new">
+                        <i [class]="t.icono + ' display-5 mb-3 text-primary'"></i>
+                        <h4 class="h6 fw-semibold mb-2">{{ t.titulo }}</h4>
+                        <p class="small text-muted">{{  t.detalle }}</p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+

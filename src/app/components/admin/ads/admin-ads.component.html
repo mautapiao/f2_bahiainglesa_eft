@@ -1,0 +1,60 @@
+<div class="container d-flex align-items-center justify-content-center mb-4 py-4" style="margin-top: 76px;">
+    <div class="card">
+        <div class="card-header">
+            Gestión Ads de Cliente
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th>#</th>
+                            <th>Fecha Envío</th>
+                            <th>Cliente</th>
+                            <th>Categoría</th>
+                            <th>Imagen</th>
+                            <th>Fecha Desde</th>
+                            <th>Fecha Hasta</th>
+                            <th>Comentario</th>
+                            <th>Costo (CLP)</th>
+                            <th>Pagado</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    <tbody>
+                        <tr *ngFor="let ad of ads; let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ ad.createdAt }}</td>
+                            <td>
+                                <strong>{{ ad.user.name }}</strong><br>
+                                {{ ad.user.email }}
+                            </td>
+                            <td><span class="badge bg-success">{{ ad.category }}</span></td>
+                            <td><img [src]="ad.imageUrl" class="img-fluid w-100" /></td>
+                            <td>{{ ad.startDate }}</td>
+                            <td>{{ ad.endDate }}</td>
+                            <td>{{ ad.description }}</td>
+                            <td>{{ ad.amount | currency:'CLP':'symbol':'1.0-0' }}</td>
+                            <td>
+                                <span [ngClass]="ad.isApproved ? 'badge bg-success' : 'badge bg-danger'">
+                                    {{ ad.isApproved ? 'Sí' : 'No' }}
+                                </span>
+                            </td>
+                            <!--<td nowrap>
+                                <a [routerLink]="ad.editLink" class="btn btn-outline-secondary btn-sm">Editar</a>
+                            </td>-->
+                            <td nowrap>
+                                <button class="btn btn-sm" [ngClass]="ad.active ? 'btn-success' : 'btn-danger'"
+                                    (click)="toggleActivo(ad)">
+                                    {{ ad.active ? 'Activado' : 'Desactivado' }}
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1102 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>bahiainglesa-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">bahiainglesa-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >UserAdminService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/services/user-admin.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Servicio para la gestión de usuarios en el módulo de administración.
+Proporciona métodos para crear, editar, eliminar y consultar usuarios.</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#usuarios" >usuarios</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getUserById" >getUserById</a>
+                            </li>
+                            <li>
+                                <a href="#getUsersAdmin" >getUsersAdmin</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/user-admin.service.ts:11</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor del servicio.
+Se puede inyectar cualquier dependencia si es necesario en el futuro.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserById"></a>
+                    <span class="name">
+                        <span ><b>getUserById</b></span>
+                        <a href="#getUserById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUserById(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="337"
+                                    class="link-to-prism">src/app/services/user-admin.service.ts:337</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la lista de un usuario especifico por id</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un array de objetos con datos de usuarios (simulado).</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUsersAdmin"></a>
+                    <span class="name">
+                        <span ><b>getUsersAdmin</b></span>
+                        <a href="#getUsersAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUsersAdmin()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="329"
+                                    class="link-to-prism">src/app/services/user-admin.service.ts:329</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Obtiene la lista de todos los usuarios</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>{}</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Un array de objetos con datos de usuarios (simulado).</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="usuarios"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>usuarios</b></span>
+                        <a href="#usuarios"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      id: 1,
+      email: &#x27;admin@empresa.cl&#x27;,
+      username: &#x27;admin&#x27;,
+      fullName: &#x27;Administrador Sistema&#x27;,
+      role: &#x27;ADMIN&#x27;,
+      roleClass: &#x27;bg-danger&#x27;,
+      createdAt: &#x27;01/01/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 2,
+      email: &#x27;juan.perez@empresa.cl&#x27;,
+      username: &#x27;jperez&#x27;,
+      fullName: &#x27;Juan Perez Gonzalez&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;15/02/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 3,
+      email: &#x27;maria.soto@empresa.cl&#x27;,
+      username: &#x27;msoto&#x27;,
+      fullName: &#x27;Maria Soto Rojas&#x27;,
+      role: &#x27;EDITOR&#x27;,
+      roleClass: &#x27;bg-info text-dark&#x27;,
+      createdAt: &#x27;20/03/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 4,
+      email: &#x27;carlos.munoz@empresa.cl&#x27;,
+      username: &#x27;cmunoz&#x27;,
+      fullName: &#x27;Carlos Munoz Diaz&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;05/04/2025&#x27;,
+      status: &#x27;Inactivo&#x27;,
+      statusClass: &#x27;bg-danger&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 5,
+      email: &#x27;ana.contreras@empresa.cl&#x27;,
+      username: &#x27;acontreras&#x27;,
+      fullName: &#x27;Ana Contreras Silva&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;10/05/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 6,
+      email: &#x27;luis.martinez@empresa.cl&#x27;,
+      username: &#x27;lmartinez&#x27;,
+      fullName: &#x27;Luis Martinez Sepulveda&#x27;,
+      role: &#x27;EDITOR&#x27;,
+      roleClass: &#x27;bg-info text-dark&#x27;,
+      createdAt: &#x27;22/06/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 7,
+      email: &#x27;sofia.morales@empresa.cl&#x27;,
+      username: &#x27;smorales&#x27;,
+      fullName: &#x27;Sofia Morales Rodriguez&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;01/07/2025&#x27;,
+      status: &#x27;Inactivo&#x27;,
+      statusClass: &#x27;bg-danger&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 8,
+      email: &#x27;diego.lopez@empresa.cl&#x27;,
+      username: &#x27;dlopez&#x27;,
+      fullName: &#x27;Diego Lopez Fuentes&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;18/08/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 9,
+      email: &#x27;camila.hernandez@empresa.cl&#x27;,
+      username: &#x27;chernandez&#x27;,
+      fullName: &#x27;Camila Hernandez Torres&#x27;,
+      role: &#x27;ADMIN&#x27;,
+      roleClass: &#x27;bg-danger&#x27;,
+      createdAt: &#x27;03/09/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 10,
+      email: &#x27;javier.araya@empresa.cl&#x27;,
+      username: &#x27;jaraya&#x27;,
+      fullName: &#x27;Javier Araya Flores&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;15/10/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 11,
+      email: &#x27;valentina.espinoza@empresa.cl&#x27;,
+      username: &#x27;vespinoza&#x27;,
+      fullName: &#x27;Valentina Espinoza Valenzuela&#x27;,
+      role: &#x27;EDITOR&#x27;,
+      roleClass: &#x27;bg-info text-dark&#x27;,
+      createdAt: &#x27;20/11/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 12,
+      email: &#x27;matias.castillo@empresa.cl&#x27;,
+      username: &#x27;mcastillo&#x27;,
+      fullName: &#x27;Matias Castillo Ramirez&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;02/12/2025&#x27;,
+      status: &#x27;Inactivo&#x27;,
+      statusClass: &#x27;bg-danger&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 13,
+      email: &#x27;isidora.reyes@empresa.cl&#x27;,
+      username: &#x27;ireyes&#x27;,
+      fullName: &#x27;Isidora Reyes Gutierrez&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;10/01/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 14,
+      email: &#x27;benjamin.castro@empresa.cl&#x27;,
+      username: &#x27;bcastro&#x27;,
+      fullName: &#x27;Benjamin Castro Perez&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;25/01/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 15,
+      email: &#x27;florencia.gonzalez@empresa.cl&#x27;,
+      username: &#x27;fgonzalez&#x27;,
+      fullName: &#x27;Florencia Gonzalez Munoz&#x27;,
+      role: &#x27;EDITOR&#x27;,
+      roleClass: &#x27;bg-info text-dark&#x27;,
+      createdAt: &#x27;08/02/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 16,
+      email: &#x27;agustin.rojas@empresa.cl&#x27;,
+      username: &#x27;arojas&#x27;,
+      fullName: &#x27;Agustin Rojas Diaz&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;19/03/2024&#x27;,
+      status: &#x27;Inactivo&#x27;,
+      statusClass: &#x27;bg-danger&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 17,
+      email: &#x27;martina.soto@empresa.cl&#x27;,
+      username: &#x27;msoto2&#x27;,
+      fullName: &#x27;Martina Soto Contreras&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;01/04/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 18,
+      email: &#x27;vicente.silva@empresa.cl&#x27;,
+      username: &#x27;vsilva&#x27;,
+      fullName: &#x27;Vicente Silva Martinez&#x27;,
+      role: &#x27;ADMIN&#x27;,
+      roleClass: &#x27;bg-danger&#x27;,
+      createdAt: &#x27;15/04/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 19,
+      email: &#x27;emilia.sepulveda@empresa.cl&#x27;,
+      username: &#x27;esepulveda&#x27;,
+      fullName: &#x27;Emilia Sepulveda Morales&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;28/04/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 20,
+      email: &#x27;joaquin.rodriguez@empresa.cl&#x27;,
+      username: &#x27;jrodriguez&#x27;,
+      fullName: &#x27;Joaquin Rodriguez Lopez&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;10/05/2024&#x27;,
+      status: &#x27;Inactivo&#x27;,
+      statusClass: &#x27;bg-danger&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 21,
+      email: &#x27;antonella.fuentes@empresa.cl&#x27;,
+      username: &#x27;afuentes&#x27;,
+      fullName: &#x27;Antonella Fuentes Hernandez&#x27;,
+      role: &#x27;EDITOR&#x27;,
+      roleClass: &#x27;bg-info text-dark&#x27;,
+      createdAt: &#x27;22/05/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 22,
+      email: &#x27;martin.torres@empresa.cl&#x27;,
+      username: &#x27;mtorres&#x27;,
+      fullName: &#x27;Martin Torres Araya&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;03/06/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 23,
+      email: &#x27;maite.flores@empresa.cl&#x27;,
+      username: &#x27;mflores&#x27;,
+      fullName: &#x27;Maite Flores Espinoza&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;17/06/2024&#x27;,
+      status: &#x27;Inactivo&#x27;,
+      statusClass: &#x27;bg-danger&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 24,
+      email: &#x27;lucas.valenzuela@empresa.cl&#x27;,
+      username: &#x27;lvalenzuela&#x27;,
+      fullName: &#x27;Lucas Valenzuela Castillo&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;01/07/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 25,
+      email: &#x27;amanda.ramirez@empresa.cl&#x27;,
+      username: &#x27;aramirez&#x27;,
+      fullName: &#x27;Amanda Ramirez Reyes&#x27;,
+      role: &#x27;EDITOR&#x27;,
+      roleClass: &#x27;bg-info text-dark&#x27;,
+      createdAt: &#x27;15/07/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    }
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/services/user-admin.service.ts:22</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Obtiene la lista de usuarios administradores.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+/**
+ * Servicio para la gestión de usuarios en el módulo de administración.
+ * Proporciona métodos para crear, editar, eliminar y consultar usuarios.
+ */
+@Injectable({
+  providedIn: &#x27;root&#x27;
+
+})
+
+export class UserAdminService {
+  /**
+   * Constructor del servicio.
+   * Se puede inyectar cualquier dependencia si es necesario en el futuro.
+   */
+  constructor(){}
+
+  /**
+   * Obtiene la lista de usuarios administradores.
+   * @returns Un array de objetos con datos de usuarios (simulado).
+   */
+  private usuarios &#x3D; [
+    {
+      id: 1,
+      email: &#x27;admin@empresa.cl&#x27;,
+      username: &#x27;admin&#x27;,
+      fullName: &#x27;Administrador Sistema&#x27;,
+      role: &#x27;ADMIN&#x27;,
+      roleClass: &#x27;bg-danger&#x27;,
+      createdAt: &#x27;01/01/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 2,
+      email: &#x27;juan.perez@empresa.cl&#x27;,
+      username: &#x27;jperez&#x27;,
+      fullName: &#x27;Juan Perez Gonzalez&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;15/02/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 3,
+      email: &#x27;maria.soto@empresa.cl&#x27;,
+      username: &#x27;msoto&#x27;,
+      fullName: &#x27;Maria Soto Rojas&#x27;,
+      role: &#x27;EDITOR&#x27;,
+      roleClass: &#x27;bg-info text-dark&#x27;,
+      createdAt: &#x27;20/03/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 4,
+      email: &#x27;carlos.munoz@empresa.cl&#x27;,
+      username: &#x27;cmunoz&#x27;,
+      fullName: &#x27;Carlos Munoz Diaz&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;05/04/2025&#x27;,
+      status: &#x27;Inactivo&#x27;,
+      statusClass: &#x27;bg-danger&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 5,
+      email: &#x27;ana.contreras@empresa.cl&#x27;,
+      username: &#x27;acontreras&#x27;,
+      fullName: &#x27;Ana Contreras Silva&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;10/05/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 6,
+      email: &#x27;luis.martinez@empresa.cl&#x27;,
+      username: &#x27;lmartinez&#x27;,
+      fullName: &#x27;Luis Martinez Sepulveda&#x27;,
+      role: &#x27;EDITOR&#x27;,
+      roleClass: &#x27;bg-info text-dark&#x27;,
+      createdAt: &#x27;22/06/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 7,
+      email: &#x27;sofia.morales@empresa.cl&#x27;,
+      username: &#x27;smorales&#x27;,
+      fullName: &#x27;Sofia Morales Rodriguez&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;01/07/2025&#x27;,
+      status: &#x27;Inactivo&#x27;,
+      statusClass: &#x27;bg-danger&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 8,
+      email: &#x27;diego.lopez@empresa.cl&#x27;,
+      username: &#x27;dlopez&#x27;,
+      fullName: &#x27;Diego Lopez Fuentes&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;18/08/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 9,
+      email: &#x27;camila.hernandez@empresa.cl&#x27;,
+      username: &#x27;chernandez&#x27;,
+      fullName: &#x27;Camila Hernandez Torres&#x27;,
+      role: &#x27;ADMIN&#x27;,
+      roleClass: &#x27;bg-danger&#x27;,
+      createdAt: &#x27;03/09/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 10,
+      email: &#x27;javier.araya@empresa.cl&#x27;,
+      username: &#x27;jaraya&#x27;,
+      fullName: &#x27;Javier Araya Flores&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;15/10/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 11,
+      email: &#x27;valentina.espinoza@empresa.cl&#x27;,
+      username: &#x27;vespinoza&#x27;,
+      fullName: &#x27;Valentina Espinoza Valenzuela&#x27;,
+      role: &#x27;EDITOR&#x27;,
+      roleClass: &#x27;bg-info text-dark&#x27;,
+      createdAt: &#x27;20/11/2025&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 12,
+      email: &#x27;matias.castillo@empresa.cl&#x27;,
+      username: &#x27;mcastillo&#x27;,
+      fullName: &#x27;Matias Castillo Ramirez&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;02/12/2025&#x27;,
+      status: &#x27;Inactivo&#x27;,
+      statusClass: &#x27;bg-danger&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 13,
+      email: &#x27;isidora.reyes@empresa.cl&#x27;,
+      username: &#x27;ireyes&#x27;,
+      fullName: &#x27;Isidora Reyes Gutierrez&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;10/01/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 14,
+      email: &#x27;benjamin.castro@empresa.cl&#x27;,
+      username: &#x27;bcastro&#x27;,
+      fullName: &#x27;Benjamin Castro Perez&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;25/01/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 15,
+      email: &#x27;florencia.gonzalez@empresa.cl&#x27;,
+      username: &#x27;fgonzalez&#x27;,
+      fullName: &#x27;Florencia Gonzalez Munoz&#x27;,
+      role: &#x27;EDITOR&#x27;,
+      roleClass: &#x27;bg-info text-dark&#x27;,
+      createdAt: &#x27;08/02/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 16,
+      email: &#x27;agustin.rojas@empresa.cl&#x27;,
+      username: &#x27;arojas&#x27;,
+      fullName: &#x27;Agustin Rojas Diaz&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;19/03/2024&#x27;,
+      status: &#x27;Inactivo&#x27;,
+      statusClass: &#x27;bg-danger&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 17,
+      email: &#x27;martina.soto@empresa.cl&#x27;,
+      username: &#x27;msoto2&#x27;,
+      fullName: &#x27;Martina Soto Contreras&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;01/04/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 18,
+      email: &#x27;vicente.silva@empresa.cl&#x27;,
+      username: &#x27;vsilva&#x27;,
+      fullName: &#x27;Vicente Silva Martinez&#x27;,
+      role: &#x27;ADMIN&#x27;,
+      roleClass: &#x27;bg-danger&#x27;,
+      createdAt: &#x27;15/04/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 19,
+      email: &#x27;emilia.sepulveda@empresa.cl&#x27;,
+      username: &#x27;esepulveda&#x27;,
+      fullName: &#x27;Emilia Sepulveda Morales&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;28/04/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 20,
+      email: &#x27;joaquin.rodriguez@empresa.cl&#x27;,
+      username: &#x27;jrodriguez&#x27;,
+      fullName: &#x27;Joaquin Rodriguez Lopez&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;10/05/2024&#x27;,
+      status: &#x27;Inactivo&#x27;,
+      statusClass: &#x27;bg-danger&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 21,
+      email: &#x27;antonella.fuentes@empresa.cl&#x27;,
+      username: &#x27;afuentes&#x27;,
+      fullName: &#x27;Antonella Fuentes Hernandez&#x27;,
+      role: &#x27;EDITOR&#x27;,
+      roleClass: &#x27;bg-info text-dark&#x27;,
+      createdAt: &#x27;22/05/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 22,
+      email: &#x27;martin.torres@empresa.cl&#x27;,
+      username: &#x27;mtorres&#x27;,
+      fullName: &#x27;Martin Torres Araya&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;03/06/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 23,
+      email: &#x27;maite.flores@empresa.cl&#x27;,
+      username: &#x27;mflores&#x27;,
+      fullName: &#x27;Maite Flores Espinoza&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;17/06/2024&#x27;,
+      status: &#x27;Inactivo&#x27;,
+      statusClass: &#x27;bg-danger&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 24,
+      email: &#x27;lucas.valenzuela@empresa.cl&#x27;,
+      username: &#x27;lvalenzuela&#x27;,
+      fullName: &#x27;Lucas Valenzuela Castillo&#x27;,
+      role: &#x27;USUARIO&#x27;,
+      roleClass: &#x27;bg-primary&#x27;,
+      createdAt: &#x27;01/07/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    },
+    {
+      id: 25,
+      email: &#x27;amanda.ramirez@empresa.cl&#x27;,
+      username: &#x27;aramirez&#x27;,
+      fullName: &#x27;Amanda Ramirez Reyes&#x27;,
+      role: &#x27;EDITOR&#x27;,
+      roleClass: &#x27;bg-info text-dark&#x27;,
+      createdAt: &#x27;15/07/2024&#x27;,
+      status: &#x27;Activo&#x27;,
+      statusClass: &#x27;bg-success&#x27;,
+      profileLink: &#x27;admin_perfil.html&#x27;
+    }
+  ];
+
+  /**
+   * Obtiene la lista de todos los usuarios 
+   * @returns Un array de objetos con datos de usuarios (simulado).
+   */
+  getUsersAdmin(){
+    return this.usuarios;
+  }
+
+  /**
+   * Obtiene la lista de un usuario especifico por id
+   * @returns Un array de objetos con datos de usuarios (simulado).
+   */
+  getUserById(id:number){
+    return this.usuarios.find(fila&#x3D;&gt;fila.id &#x3D;&#x3D;&#x3D;id);
+  }
+
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserAdminService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,588 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>bahiainglesa-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">bahiainglesa-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ContactComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/client/contact/contact.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Formulario de contacto uso de NgModel
+Las propiedades de esta interfaz están escritas en inglés para seguir buenas prácticas,</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-contact</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>FormsModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./contact.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#contact" >contact</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#enviarFormulario" >enviarFormulario</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="enviarFormulario"></a>
+                    <span class="name">
+                        <span ><b>enviarFormulario</b></span>
+                        <a href="#enviarFormulario"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>enviarFormulario(form: NgForm)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="29"
+                                    class="link-to-prism">src/app/components/client/contact/contact.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Metodo para envío de Formulario de contacto uso de NgModel</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>form</td>
+                                            <td>
+                                                        <code>NgForm</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="contact"></a>
+                    <span class="name">
+                        <span ><b>contact</b></span>
+                        <a href="#contact"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    name: &#x27;Usuario Cliente&#x27;,
+    email: &#x27;usuario@gmail.com&#x27;,
+    menssage: &#x27;&#x27;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/client/contact/contact.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Objeto json prueba de NgModel</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { FormsModule, NgForm } from &#x27;@angular/forms&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+/**
+ * Formulario de contacto uso de NgModel
+ * Las propiedades de esta interfaz están escritas en inglés para seguir buenas prácticas,
+ */
+@Component({
+  selector: &#x27;app-contact&#x27;,
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: &#x27;./contact.component.html&#x27;,
+
+})
+export class ContactComponent {
+
+  /**
+  * Objeto json prueba de NgModel
+  */
+  contact &#x3D; {
+    name: &#x27;Usuario Cliente&#x27;,
+    email: &#x27;usuario@gmail.com&#x27;,
+    menssage: &#x27;&#x27;
+  };
+
+  /**
+  * Metodo para envío de Formulario de contacto uso de NgModel
+  */
+  enviarFormulario(form: NgForm) {
+    console.log(&#x27;Formulario enviado:&#x27;, this.contact);
+    alert(&#x60;Gracias por escribirnos, ${this.contact.name}&#x60;);
+    /** Limpia los campor del formulario  */
+    form.resetForm();
+
+    //this.contacto &#x3D; { nombre: &#x27;Usuario Cliente&#x27;, email: &#x27;usuario@gmail.com&#x27;, mensaje: &#x27;&#x27; };
+
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container justify-content-center mb-4 py-4&quot; style&#x3D;&quot;margin-top: 76px;&quot;&gt;
+    &lt;div class&#x3D;&quot;card&quot;&gt;
+        &lt;div class&#x3D;&quot;card-header&quot;&gt;
+            Gestión de Perfil
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+
+            &lt;div class&#x3D;&quot;row justify-content-center w-100&quot;&gt; &lt;!-- w-100 para que ocupe el ancho disponible --&gt;
+                &lt;div class&#x3D;&quot;col-12 col-md-8 col-lg-6 col-xl-5&quot;&gt; &lt;!-- Ajusta columnas para controlar el ancho --&gt;
+
+                    &lt;div class&#x3D;&quot;container mt-4&quot;&gt;
+                        &lt;h2&gt;Formulario de Contacto&lt;/h2&gt;
+
+                        &lt;form #miFormulario&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;enviarFormulario(miFormulario)&quot; #contactForm&#x3D;&quot;ngForm&quot; novalidate&gt;
+
+                            &lt;!-- Nombre --&gt;
+                            &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+                                &lt;label class&#x3D;&quot;form-label&quot;&gt;Nombre&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;nombre&quot; [(ngModel)]&#x3D;&quot;contact.name&quot; required minlength&#x3D;&quot;3&quot;
+                                    class&#x3D;&quot;form-control&quot; #nombreInput&#x3D;&quot;ngModel&quot; &gt;
+                                &lt;div class&#x3D;&quot;text-danger&quot; *ngIf&#x3D;&quot;nombreInput.invalid &amp;&amp; nombreInput.touched&quot;&gt;
+                                    El nombre es obligatorio y debe tener al menos 3 caracteres.
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;!-- Email --&gt;
+                            &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+                                &lt;label class&#x3D;&quot;form-label&quot;&gt;Correo&lt;/label&gt;
+                                &lt;input type&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; [(ngModel)]&#x3D;&quot;contact.email&quot; required
+                                    class&#x3D;&quot;form-control&quot; #emailInput&#x3D;&quot;ngModel&quot; &gt;
+                                &lt;div class&#x3D;&quot;text-danger&quot; *ngIf&#x3D;&quot;emailInput.invalid &amp;&amp; emailInput.touched&quot;&gt;
+                                    Ingresa un correo válido.
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;!-- Mensaje --&gt;
+                            &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+                                &lt;label class&#x3D;&quot;form-label&quot;&gt;Mensaje&lt;/label&gt;
+                                &lt;textarea name&#x3D;&quot;mensaje&quot; [(ngModel)]&#x3D;&quot;contact.menssage&quot; required class&#x3D;&quot;form-control&quot;
+                                    #mensajeInput&#x3D;&quot;ngModel&quot; rows&#x3D;&quot;3&quot;&gt;&lt;/textarea&gt;
+                                &lt;div class&#x3D;&quot;text-danger&quot; *ngIf&#x3D;&quot;mensajeInput.invalid &amp;&amp; mensajeInput.touched&quot;&gt;
+                                    El mensaje es obligatorio.
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;!-- Botón --&gt;
+                            &lt;button class&#x3D;&quot;btn btn-primary&quot; type&#x3D;&quot;submit&quot;
+                                [disabled]&#x3D;&quot;contactForm.invalid&quot;&gt;Enviar&lt;/button&gt;
+                        &lt;/form&gt;
+
+                        &lt;!-- Vista previa --&gt;
+                        &lt;div class&#x3D;&quot;mt-4&quot;&gt;
+                            &lt;h5&gt;Datos que serán enviados:&lt;/h5&gt;
+                            &lt;pre&gt;{{ contact | json }}&lt;/pre&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container justify-content-center mb-4 py-4" style="margin-top: 76px;">    <div class="card">        <div class="card-header">            Gestión de Perfil        </div>        <div class="card-body">            <div class="row justify-content-center w-100"> <!-- w-100 para que ocupe el ancho disponible -->                <div class="col-12 col-md-8 col-lg-6 col-xl-5"> <!-- Ajusta columnas para controlar el ancho -->                    <div class="container mt-4">                        <h2>Formulario de Contacto</h2>                        <form #miFormulario="ngForm" (ngSubmit)="enviarFormulario(miFormulario)" #contactForm="ngForm" novalidate>                            <!-- Nombre -->                            <div class="mb-3">                                <label class="form-label">Nombre</label>                                <input type="text" name="nombre" [(ngModel)]="contact.name" required minlength="3"                                    class="form-control" #nombreInput="ngModel" >                                <div class="text-danger" *ngIf="nombreInput.invalid && nombreInput.touched">                                    El nombre es obligatorio y debe tener al menos 3 caracteres.                                </div>                            </div>                            <!-- Email -->                            <div class="mb-3">                                <label class="form-label">Correo</label>                                <input type="email" name="email" [(ngModel)]="contact.email" required                                    class="form-control" #emailInput="ngModel" >                                <div class="text-danger" *ngIf="emailInput.invalid && emailInput.touched">                                    Ingresa un correo válido.                                </div>                            </div>                            <!-- Mensaje -->                            <div class="mb-3">                                <label class="form-label">Mensaje</label>                                <textarea name="mensaje" [(ngModel)]="contact.menssage" required class="form-control"                                    #mensajeInput="ngModel" rows="3"></textarea>                                <div class="text-danger" *ngIf="mensajeInput.invalid && mensajeInput.touched">                                    El mensaje es obligatorio.                                </div>                            </div>                            <!-- Botón -->                            <button class="btn btn-primary" type="submit"                                [disabled]="contactForm.invalid">Enviar</button>                        </form>                        <!-- Vista previa -->                        <div class="mt-4">                            <h5>Datos que serán enviados:</h5>                            <pre>{{ contact | json }}</pre>                        </div>                    </div>                </div>            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminAdsComponent', 'selector': 'app-admin-ads'},{'name': 'AdminAdsEditComponent', 'selector': 'app-admin-ads-edit'},{'name': 'AdminCategoryComponent', 'selector': 'app-admin-category'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AdminLayoutComponent', 'selector': 'app-admin-layout'},{'name': 'AdminPlansComponent', 'selector': 'app-admin-plans'},{'name': 'AdminPostComponent', 'selector': 'app-admin-post'},{'name': 'AdminUserComponent', 'selector': 'app-admin-user'},{'name': 'AdscreateComponent', 'selector': 'app-adscreate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthLayoutComponent', 'selector': 'app-auth-layout'},{'name': 'AvailablePlansComponent', 'selector': 'app-available-plans'},{'name': 'AvisosComponent', 'selector': 'app-avisos'},{'name': 'BienvenidosComponent', 'selector': 'app-bienvenidos'},{'name': 'CalltoactionComponent', 'selector': 'app-calltoaction'},{'name': 'ClientHomeComponent', 'selector': 'app-client-home'},{'name': 'ClientLayoutComponent', 'selector': 'app-client-layout'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeroBahiaComponent', 'selector': 'app-hero-bahia'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainContentComponent', 'selector': 'app-main-content'},{'name': 'MainLayoutComponent', 'selector': 'app-main-layout'},{'name': 'MyAccountComponent', 'selector': 'app-my-account'},{'name': 'MyAdsComponent', 'selector': 'app-my-ads'},{'name': 'NoticiasComponent', 'selector': 'app-noticias'},{'name': 'PlayasComponent', 'selector': 'app-playas'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'RecoveryComponent', 'selector': 'app-recovery'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RestaurantsComponent', 'selector': 'app-restaurants'},{'name': 'RightColumnComponent', 'selector': 'app-right-column'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'ToursComponent', 'selector': 'app-tours'},{'name': 'UserEditComponent', 'selector': 'app-user-edit'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ContactComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ContactComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

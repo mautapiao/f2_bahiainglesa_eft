@@ -1,0 +1,46 @@
+    <!-- Main  -->
+    <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center py-4">
+        <div class="row justify-content-center w-100"> <!-- w-100 para que ocupe el ancho disponible -->
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5"> <!-- Ajusta columnas para controlar el ancho -->
+                <div class="card shadow login-card">
+                    <div class="card-body p-4">
+                        <h3 class="text-center text-secondary mb-4">Iniciar Sesión</h3>
+                         
+                        <div id="alertFailLogin" class="alert alert-danger d-none mt-3">
+                             Credenciales inválidas. Inténtalo de nuevo.
+                        </div>
+
+                        <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" [class.is-invalid]="formLogin.get('email')?.invalid && formLogin.get('email')?.touched"
+                                id="email" formControlName="email">
+                                <div class="invalid-feedback"
+                                *ngIf="formLogin.get('email')?.invalid && formLogin.get('email')?.touched|| submitted">
+                                Por favor ingrese su email.
+                            </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" [class.is-invalid]="formLogin.get('password')?.invalid && formLogin.get('email')?.touched"
+                                id="password" formControlName="password">
+                                <div class="invalid-feedback"
+                                *ngIf="formLogin.get('password')?.invalid && formLogin.get('password')?.touched|| submitted">
+                                Por favor ingrese su contraseña.
+                            </div>
+                            </div>
+                            <div class="d-grid mb-3">
+                                <button type="submit" class="btn btn-primary">Ingresar</button>
+                            </div>
+                            <div class="text-center">
+                                <a [routerLink]="'/auth/recovery'" class="small text-decoration-none text-primary">¿Olvidaste tu
+                                    contraseña?</a><br>
+                                <a [routerLink]="'/auth/register'" class="small text-decoration-none text-secondary">¿No tienes
+                                    cuenta? Regístrate</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+ </div>

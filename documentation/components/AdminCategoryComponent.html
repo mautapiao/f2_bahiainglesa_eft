@@ -1,0 +1,979 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>bahiainglesa-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">bahiainglesa-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AdminCategoryComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/admin/category/admin-category.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Componente que muestra las categorias del sistema para los avisos</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-admin-category</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>RouterModule</code>
+                            <code>CommonModule</code>
+                            <code>FormsModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./admin-category.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./admin-category.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#categories" >categories</a>
+                            </li>
+                            <li>
+                                <a href="#editedCategory" >editedCategory</a>
+                            </li>
+                            <li>
+                                <a href="#editingIndex" >editingIndex</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#confirmDelete" >confirmDelete</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openEditModal" >openEditModal</a>
+                            </li>
+                            <li>
+                                <a href="#saveChanges" >saveChanges</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(http: HttpClient)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/admin/category/admin-category.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>constructor de la clase</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>http</td>
+                                                  
+                                                        <td>
+                                                                    <code>HttpClient</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="confirmDelete"></a>
+                    <span class="name">
+                        <span ><b>confirmDelete</b></span>
+                        <a href="#confirmDelete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>confirmDelete(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/app/components/admin/category/admin-category.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Confirmar la eliminación del registro</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="35"
+                                    class="link-to-prism">src/app/components/admin/category/admin-category.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método del ciclo de vida de Angular que se ejecuta automáticamente
+cuando el componente ha sido inicializado.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openEditModal"></a>
+                    <span class="name">
+                        <span ><b>openEditModal</b></span>
+                        <a href="#openEditModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openEditModal(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/components/admin/category/admin-category.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Abre el modal y carga los datos de la fila seleccionada</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveChanges"></a>
+                    <span class="name">
+                        <span ><b>saveChanges</b></span>
+                        <a href="#saveChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveChanges()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="95"
+                                    class="link-to-prism">src/app/components/admin/category/admin-category.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Guardar los cambios del formulario en la tabla</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="categories"></a>
+                    <span class="name">
+                        <span ><b>categories</b></span>
+                        <a href="#categories"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Category.html" target="_self" >Category[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/admin/category/admin-category.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Poblamiento de categorías</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editedCategory"></a>
+                    <span class="name">
+                        <span ><b>editedCategory</b></span>
+                        <a href="#editedCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/admin/category/admin-category.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>editar categoria</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editingIndex"></a>
+                    <span class="name">
+                        <span ><b>editingIndex</b></span>
+                        <a href="#editingIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>-1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/admin/category/admin-category.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Indice de fila</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { RouterModule } from &#x27;@angular/router&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Category } from &#x27;../../../interfaces/category&#x27;;
+import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+/**
+ * Componente que muestra las categorias del sistema para los avisos
+ */
+@Component({
+  standalone: true,
+  selector: &#x27;app-admin-category&#x27;,
+  imports: [RouterModule, CommonModule, FormsModule],
+  templateUrl: &#x27;./admin-category.component.html&#x27;,
+  styleUrl: &#x27;./admin-category.component.scss&#x27;
+})
+export class AdminCategoryComponent {
+
+  /** editar categoria */
+  editedCategory: any &#x3D; {};
+  /** Indice de fila */
+  editingIndex: number &#x3D; -1;
+
+  /** Poblamiento de categorías */
+  categories: Category[] &#x3D; [];
+
+  /** constructor de la clase */
+  constructor(private http: HttpClient) { }
+
+  /**
+   * Método del ciclo de vida de Angular que se ejecuta automáticamente
+   * cuando el componente ha sido inicializado.
+   */
+  ngOnInit(): void {
+
+    /** Realizó una solicitud HTTP GET al archivo JSON que contiene las categorias */
+    this.http.get&lt;Category[]&gt;(&#x27;https://mautapiao.github.io/jsonbi/categories.json&#x27;)
+      .subscribe({
+        /** next: Se ejecuta cuando la petición es exitosa */
+        next: (data) &#x3D;&gt; {
+          /** Asignar los datos recibidos a la propiedad categoria del componente */
+          this.categories &#x3D; data;
+        },
+        /** error: Se ejecuta cuando hay un error en la petición */
+        error: (error) &#x3D;&gt; {
+          /** Muestra el error en la consola para debugging */
+          console.log(&#x27;Error:&#x27;, error);
+        }
+      });
+  }
+
+  /** Confirmar la eliminación del registro */
+  confirmDelete(index: number): void {
+    Swal.fire({
+      title: &#x27;¿Estás seguro?&#x27;,
+      text: &#x27;Esta acción eliminará la fila.&#x27;,
+      icon: &#x27;warning&#x27;,
+      showCancelButton: true,
+      confirmButtonText: &#x27;Sí, eliminar&#x27;,
+      cancelButtonText: &#x27;Cancelar&#x27;
+    }).then((result) &#x3D;&gt; {
+      if (result.isConfirmed) {
+        this.categories.splice(index, 1); // Eliminar la fila del array
+        Swal.fire(&#x27;Eliminado&#x27;, &#x27;La fila ha sido eliminada.&#x27;, &#x27;success&#x27;);
+      }
+    });
+  }
+
+  /** Abre el modal y carga los datos de la fila seleccionada */
+  openEditModal(index: number): void {
+    /** Guardar el índice de la fila que vamos a editar */
+    this.editingIndex &#x3D; index;
+
+    /** Crear una copia del objeto de la fila para no modificarlo directamente */
+    const selectedCategory &#x3D; this.categories[index];
+    this.editedCategory &#x3D; {
+      id: selectedCategory.id,
+      name: selectedCategory.name,
+      description: selectedCategory.description,
+      isActive: selectedCategory.isActive
+    };
+
+    /** Obtener el modal del DOM usando su ID */
+    const modalElement &#x3D; document.getElementById(&#x27;editModal&#x27;);
+
+    /** Crear una instancia del modal de Bootstrap y lo mostramos */
+    if (modalElement) {
+      const modal &#x3D; new (window as any).bootstrap.Modal(modalElement);
+      modal.show();
+    }
+  }
+
+  /** Guardar los cambios del formulario en la tabla */
+  saveChanges(): void {
+    /** Verificar que se haya seleccionado una fila para editar */
+    if (this.editingIndex !&#x3D;&#x3D; -1) {
+      /** Reemplazar el objeto original con los datos editados */
+      this.categories[this.editingIndex] &#x3D; {
+        id: this.editedCategory.id,
+        name: this.editedCategory.name,
+        description: this.editedCategory.description,
+        isActive: this.editedCategory.isActive
+      };
+
+      /** Limpiar el índice actual */
+      this.editingIndex &#x3D; -1;
+
+      /** Cerrar el modal de edición */
+      const modalElement &#x3D; document.getElementById(&#x27;editModal&#x27;);
+      if (modalElement) {
+        const modal &#x3D; (window as any).bootstrap.Modal.getInstance(modalElement);
+        modal?.hide();
+      }
+
+      /** Mostrar una alerta de éxito */
+      Swal.fire(&#x27;Guardado&#x27;, &#x27;La categoría ha sido actualizada.&#x27;, &#x27;success&#x27;);
+    }
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container _min-vh-100 _d-flex _align-items-center justify-content-center mb-4 py-4&quot;
+    style&#x3D;&quot;margin-top: 76px;&quot;&gt;
+
+    &lt;div class&#x3D;&quot;card&quot;&gt;
+        &lt;div class&#x3D;&quot;card-header&quot;&gt;
+            Gestión de Categorías
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+
+            &lt;div class&#x3D;&quot;table-responsive&quot;&gt;
+                &lt;table class&#x3D;&quot;table table-striped table-hover table-bordered&quot;&gt;
+                    &lt;thead class&#x3D;&quot;table-secondary&quot;&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;#&lt;/th&gt;
+                            &lt;th&gt;Categoría&lt;/th&gt;
+                            &lt;th&gt;Descripción&lt;/th&gt;
+                            &lt;th&gt;Estado&lt;/th&gt;
+                            &lt;th&gt;Acciones&lt;/th&gt;
+                        &lt;/tr&gt;
+                    &lt;/thead&gt;
+                    &lt;tbody&gt;
+                        &lt;tr *ngFor&#x3D;&quot;let category of categories; let i &#x3D; index&quot;&gt;
+                            &lt;td&gt;{{ i + 1 }}&lt;/td&gt;
+                            &lt;td&gt;{{ category.name }}&lt;/td&gt;
+                            &lt;td&gt;{{ category.description }}&lt;/td&gt;
+                            &lt;td&gt;
+                                &lt;span [class.badge]&#x3D;&quot;true&quot; [class.bg-success]&#x3D;&quot;category.isActive&quot;
+                                    [class.bg-danger]&#x3D;&quot;!category.isActive&quot;&gt;
+                                    {{ category.isActive ? &#x27;Activo&#x27; : &#x27;Inactivo&#x27; }}
+                                &lt;/span&gt;
+                            &lt;/td&gt;
+                            &lt;td&gt;
+                                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-secondary btn-sm&quot;
+                                    (click)&#x3D;&quot;openEditModal(i)&quot;&gt;
+                                    Editar
+                                    &lt;/button&gt;
+                                    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-danger btn-sm ms-2&quot;
+                                        (click)&#x3D;&quot;confirmDelete(i)&quot;&gt;
+                                        Eliminar
+                                    &lt;/button&gt;
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/tbody&gt;
+                &lt;/table&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Modal de edición --&gt;
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;editModal&quot; tabindex&#x3D;&quot;-1&quot; aria-labelledby&#x3D;&quot;editModalLabel&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+    &lt;div class&#x3D;&quot;modal-dialog&quot;&gt;
+        &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+            &lt;div class&#x3D;&quot;modal-header&quot;&gt;
+                &lt;h5 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;editModalLabel&quot;&gt;Editar Categoría&lt;/h5&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn-close&quot; data-bs-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Cerrar&quot;&gt;&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-body&quot;&gt;
+                &lt;form&gt;
+                    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+                        &lt;label class&#x3D;&quot;form-label&quot;&gt;Nombre&lt;/label&gt;
+                        &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;editedCategory.name&quot; name&#x3D;&quot;name&quot; /&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+                        &lt;label class&#x3D;&quot;form-label&quot;&gt;Descripción&lt;/label&gt;
+                        &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&quot;editedCategory.description&quot;
+                            name&#x3D;&quot;description&quot; /&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;form-check mb-3&quot;&gt;
+                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; [(ngModel)]&#x3D;&quot;editedCategory.isActive&quot;
+                            name&#x3D;&quot;isActive&quot; /&gt;
+                        &lt;label class&#x3D;&quot;form-check-label&quot;&gt;Activo&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; data-bs-dismiss&#x3D;&quot;modal&quot;&gt;
+                    Cancelar
+                &lt;/button&gt;
+                &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;saveChanges()&quot;&gt;
+                    Guardar
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container _min-vh-100 _d-flex _align-items-center justify-content-center mb-4 py-4"    style="margin-top: 76px;">    <div class="card">        <div class="card-header">            Gestión de Categorías        </div>        <div class="card-body">            <div class="table-responsive">                <table class="table table-striped table-hover table-bordered">                    <thead class="table-secondary">                        <tr>                            <th>#</th>                            <th>Categoría</th>                            <th>Descripción</th>                            <th>Estado</th>                            <th>Acciones</th>                        </tr>                    </thead>                    <tbody>                        <tr *ngFor="let category of categories; let i = index">                            <td>{{ i + 1 }}</td>                            <td>{{ category.name }}</td>                            <td>{{ category.description }}</td>                            <td>                                <span [class.badge]="true" [class.bg-success]="category.isActive"                                    [class.bg-danger]="!category.isActive">                                    {{ category.isActive ? \'Activo\' : \'Inactivo\' }}                                </span>                            </td>                            <td>                                <button type="button" class="btn btn-outline-secondary btn-sm"                                    (click)="openEditModal(i)">                                    Editar                                    </button>                                    <button type="button" class="btn btn-outline-danger btn-sm ms-2"                                        (click)="confirmDelete(i)">                                        Eliminar                                    </button>                            </td>                        </tr>                    </tbody>                </table>            </div>        </div>    </div></div><!-- Modal de edición --><div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">    <div class="modal-dialog">        <div class="modal-content">            <div class="modal-header">                <h5 class="modal-title" id="editModalLabel">Editar Categoría</h5>                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>            </div>            <div class="modal-body">                <form>                    <div class="mb-3">                        <label class="form-label">Nombre</label>                        <input type="text" class="form-control" [(ngModel)]="editedCategory.name" name="name" />                    </div>                    <div class="mb-3">                        <label class="form-label">Descripción</label>                        <input type="text" class="form-control" [(ngModel)]="editedCategory.description"                            name="description" />                    </div>                    <div class="form-check mb-3">                        <input class="form-check-input" type="checkbox" [(ngModel)]="editedCategory.isActive"                            name="isActive" />                        <label class="form-check-label">Activo</label>                    </div>                </form>            </div>            <div class="modal-footer">                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">                    Cancelar                </button>                <button type="button" class="btn btn-primary" (click)="saveChanges()">                    Guardar                </button>            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminAdsComponent', 'selector': 'app-admin-ads'},{'name': 'AdminAdsEditComponent', 'selector': 'app-admin-ads-edit'},{'name': 'AdminCategoryComponent', 'selector': 'app-admin-category'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AdminLayoutComponent', 'selector': 'app-admin-layout'},{'name': 'AdminPlansComponent', 'selector': 'app-admin-plans'},{'name': 'AdminPostComponent', 'selector': 'app-admin-post'},{'name': 'AdminUserComponent', 'selector': 'app-admin-user'},{'name': 'AdscreateComponent', 'selector': 'app-adscreate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthLayoutComponent', 'selector': 'app-auth-layout'},{'name': 'AvailablePlansComponent', 'selector': 'app-available-plans'},{'name': 'AvisosComponent', 'selector': 'app-avisos'},{'name': 'BienvenidosComponent', 'selector': 'app-bienvenidos'},{'name': 'CalltoactionComponent', 'selector': 'app-calltoaction'},{'name': 'ClientHomeComponent', 'selector': 'app-client-home'},{'name': 'ClientLayoutComponent', 'selector': 'app-client-layout'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeroBahiaComponent', 'selector': 'app-hero-bahia'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainContentComponent', 'selector': 'app-main-content'},{'name': 'MainLayoutComponent', 'selector': 'app-main-layout'},{'name': 'MyAccountComponent', 'selector': 'app-my-account'},{'name': 'MyAdsComponent', 'selector': 'app-my-ads'},{'name': 'NoticiasComponent', 'selector': 'app-noticias'},{'name': 'PlayasComponent', 'selector': 'app-playas'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'RecoveryComponent', 'selector': 'app-recovery'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RestaurantsComponent', 'selector': 'app-restaurants'},{'name': 'RightColumnComponent', 'selector': 'app-right-column'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'ToursComponent', 'selector': 'app-tours'},{'name': 'UserEditComponent', 'selector': 'app-user-edit'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AdminCategoryComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdminCategoryComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

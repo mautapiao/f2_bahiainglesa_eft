@@ -1,0 +1,22 @@
+ <!-- Columna derecha avisos -->
+<div class="sticky-top" style="top: 100px;">
+  <h3 class="h4 fw-bold mb-4 text-secondary">Hospedaje Recomendado</h3>
+  <div *ngFor="let h of hospedajes" class="card ad-card mb-2 card-hover fade-in-up-new">
+    <div class="card-body text-center">
+      <i [class]="h.icono + ' display-5 mb-3 ' + h.colorIcono"></i>
+      <h4 class="h5 fw-bold mb-2 text-secondary">{{ h.nombre }}</h4>
+      <p class="stars mb-3" *ngIf="h.estrellas">
+        {{ '⭐'.repeat(h.estrellas) }}
+      </p>
+      <p class="small text-muted mb-3">{{ h.descripcion }}</p>
+      <div class="bg-light rounded p-2 mb-3" *ngIf="h.precioPorNoche">
+        <p class="h4 fw-bold price-highlight mb-0">
+          ${{ h.precioPorNoche }}/noche
+        </p>
+      </div>
+      <button class="btn rounded-pill fw-semibold w-100" [class]="h.colorBoton">
+        {{ h.textoBoton }}
+      </button>
+    </div>
+  </div>
+</div>

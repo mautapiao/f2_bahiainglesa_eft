@@ -1,0 +1,110 @@
+<!-- Main -->
+<div class="container _min-vh-100 _d-flex _align-items-center justify-content-center mb-4 py-4"
+    style="margin-top: 76px;">
+
+    <div class="card">
+        <div class="card-header">
+            Gestión de Categorías
+        </div>
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-hover align-middle">
+                    <thead class="table-light text-secondary text-center">
+                        <tr>
+                            <th>#</th>
+                            <th>Categoría</th>
+                            <th>Tamaño</th>
+                            <th>Ubicación</th>
+                            <th>Diario</th>
+                            <th>Semanal</th>
+                            <th>Mensual</th>
+                            <th>Anual</th>
+                            <th>Descripción</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr *ngFor="let spot of adSpots; let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ spot.category }}</td>
+                            <td>{{ spot.size }}</td>
+                            <td>{{ spot.location }}</td>
+                            <td>{{ spot.dailyPrice }}</td>
+                            <td>{{ spot.weeklyPrice }}</td>
+                            <td>{{ spot.monthlyPrice }}</td>
+                            <td>{{ spot.annualPrice }}</td>
+                            <td>{{ spot.description }}</td>
+                            <td>
+                              <button type="button" class="btn btn-outline-secondary btn-sm"
+                                    (click)="openEditSpotModal(i)">
+                                    Editar
+                                    </button>
+                                <button type="button" class="btn btn-outline-danger btn-sm ms-2"
+                                        (click)="confirmDelete(i)">
+                                        Eliminar
+                                    </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de edición -->
+<div class="modal fade" id="editSpotModal" tabindex="-1" aria-labelledby="editSpotLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg"> <!-- ancho grande por la cantidad de campos -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editSpotLabel">Editar Espacio Publicitario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Categoría</label>
+              <input type="text" class="form-control" [(ngModel)]="editedSpot.category" name="category">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Tamaño</label>
+              <input type="text" class="form-control" [(ngModel)]="editedSpot.size" name="size">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Ubicación</label>
+              <input type="text" class="form-control" [(ngModel)]="editedSpot.location" name="location">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Precio Diario</label>
+              <input type="number" class="form-control" [(ngModel)]="editedSpot.dailyPrice" name="dailyPrice">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Precio Semanal</label>
+              <input type="number" class="form-control" [(ngModel)]="editedSpot.weeklyPrice" name="weeklyPrice">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Precio Mensual</label>
+              <input type="number" class="form-control" [(ngModel)]="editedSpot.monthlyPrice" name="monthlyPrice">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Precio Anual</label>
+              <input type="number" class="form-control" [(ngModel)]="editedSpot.annualPrice" name="annualPrice">
+            </div>
+            <div class="col-12">
+              <label class="form-label">Descripción</label>
+              <textarea class="form-control" rows="3" [(ngModel)]="editedSpot.description" name="description"></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="saveEditedSpot()">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>

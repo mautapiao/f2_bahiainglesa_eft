@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top floating-nav shadow-sm">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#inicio">
+      <i class="fas fa-umbrella-beach text-primary me-2 fs-3"></i>
+      <span class="fs-3 fw-bold">Bahía Inglesa</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="goHome($event)">Inicio</a>
+        </li>
+        <!--
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('restaurantes')">Restaurant</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('eventos')">Eventos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('tours')" >Tours</a>
+        </li>
+      -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'auth/login'"><i class="fa-solid fa-lock"></i> Acceso</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>

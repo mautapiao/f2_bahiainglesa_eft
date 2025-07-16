@@ -1,0 +1,423 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>bahiainglesa-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">bahiainglesa-ng documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AvailablePlansComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/client/available-plans/available-plans.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Area de cliente donde visualiza el valor de los servicios o planes</p>
+
+    </p>
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-available-plans</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./available-plans.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./available-plans.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+/**
+ * Area de cliente donde visualiza el valor de los servicios o planes
+ */
+@Component({
+  selector: &#x27;app-available-plans&#x27;,
+  imports: [],
+  templateUrl: &#x27;./available-plans.component.html&#x27;,
+  styleUrl: &#x27;./available-plans.component.scss&#x27;
+})
+export class AvailablePlansComponent {
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- Main --&gt;
+&lt;div class&#x3D;&quot;container _min-vh-100 _d-flex _align-items-center justify-content-center mb-4 py-4&quot;
+    style&#x3D;&quot;margin-top: 76px;&quot;&gt;
+
+    &lt;div class&#x3D;&quot;card&quot;&gt;
+
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+
+            &lt;section id&#x3D;&quot;tarifas&quot; class&#x3D;&quot;my-5&quot;&gt;
+                &lt;div class&#x3D;&quot;container&quot;&gt;
+                    &lt;h2 class&#x3D;&quot;text-secondary fw-bold text-center mb-4&quot;&gt;Planes de Publicación&lt;/h2&gt;
+                    &lt;p class&#x3D;&quot;text-muted text-center mb-5&quot;&gt;
+                        Conoce nuestros planes de anuncios y elige el plan que mejor se adapte a tu proyecto o anuncio.
+                        Publica tu emprendimiento, evento
+                        o servicio turístico con visibilidad garantizada.
+                    &lt;/p&gt;
+
+                    &lt;div class&#x3D;&quot;row g-4 justify-content-center&quot;&gt;
+                        &lt;!-- Plan Diario --&gt;
+                        &lt;div class&#x3D;&quot;col-12 col-md-6 col-lg-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;card shadow-sm h-100 text-center border-primary&quot;&gt;
+                                &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                                    &lt;h5 class&#x3D;&quot;card-title fw-bold text-primary&quot;&gt;Plan Diario&lt;/h5&gt;
+                                    &lt;p class&#x3D;&quot;text-muted small mb-3&quot;&gt;Ideal para promociones flash o eventos de un
+                                        día&lt;/p&gt;
+                                    &lt;h3 class&#x3D;&quot;fw-bold price-highlight mb-3&quot;&gt;$5.000&lt;/h3&gt;
+                                    &lt;ul class&#x3D;&quot;list-unstyled text-muted mb-4 small&quot;&gt;
+                                        &lt;li&gt;✔ Publicación 24 horas&lt;/li&gt;
+                                        &lt;li&gt;✔ Presencia en sección elegida&lt;/li&gt;
+                                        &lt;li&gt;✔ Visualización móvil y PC&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Plan Semanal --&gt;
+                        &lt;div class&#x3D;&quot;col-12 col-md-6 col-lg-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;card shadow-sm h-100 text-center border-success&quot;&gt;
+                                &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                                    &lt;h5 class&#x3D;&quot;card-title fw-bold text-success&quot;&gt;Plan Semanal&lt;/h5&gt;
+                                    &lt;p class&#x3D;&quot;text-muted small mb-3&quot;&gt;Perfecto para lanzamientos o campañas breves
+                                    &lt;/p&gt;
+                                    &lt;h3 class&#x3D;&quot;fw-bold price-highlight mb-3&quot;&gt;$25.000&lt;/h3&gt;
+                                    &lt;ul class&#x3D;&quot;list-unstyled text-muted mb-4 small&quot;&gt;
+                                        &lt;li&gt;✔ Visibilidad 7 días&lt;/li&gt;
+                                        &lt;li&gt;✔ Aparece en página destacada&lt;/li&gt;
+                                        &lt;li&gt;✔ Estadísticas básicas&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Plan Mensual --&gt;
+                        &lt;div class&#x3D;&quot;col-12 col-md-6 col-lg-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;card shadow-sm h-100 text-center border-warning&quot;&gt;
+                                &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                                    &lt;h5 class&#x3D;&quot;card-title fw-bold text-warning&quot;&gt;Plan Mensual&lt;/h5&gt;
+                                    &lt;p class&#x3D;&quot;text-muted small mb-3&quot;&gt;El más elegido para negocios turísticos&lt;/p&gt;
+                                    &lt;h3 class&#x3D;&quot;fw-bold price-highlight mb-3&quot;&gt;$80.000&lt;/h3&gt;
+                                    &lt;ul class&#x3D;&quot;list-unstyled text-muted mb-4 small&quot;&gt;
+                                        &lt;li&gt;✔ 30 días de publicación&lt;/li&gt;
+                                        &lt;li&gt;✔ En portada y sección&lt;/li&gt;
+                                        &lt;li&gt;✔ Reporte de vistas&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+
+                        &lt;!-- Plan Anual --&gt;
+                        &lt;div class&#x3D;&quot;col-12 col-md-6 col-lg-3&quot;&gt;
+                            &lt;div class&#x3D;&quot;card shadow-sm h-100 text-center border-dark&quot;&gt;
+                                &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                                    &lt;h5 class&#x3D;&quot;card-title fw-bold text-dark&quot;&gt;Plan Anual&lt;/h5&gt;
+                                    &lt;p class&#x3D;&quot;text-muted small mb-3&quot;&gt;Máxima visibilidad para todo el año&lt;/p&gt;
+                                    &lt;h3 class&#x3D;&quot;fw-bold price-highlight mb-3&quot;&gt;$700.000&lt;/h3&gt;
+                                    &lt;ul class&#x3D;&quot;list-unstyled text-muted mb-4 small&quot;&gt;
+                                        &lt;li&gt;✔ 12 meses publicados&lt;/li&gt;
+                                        &lt;li&gt;✔ Alta visibilidad garantizada&lt;/li&gt;
+                                        &lt;li&gt;✔ Estadísticas avanzadas + soporte&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- Main --><div class="container _min-vh-100 _d-flex _align-items-center justify-content-center mb-4 py-4"    style="margin-top: 76px;">    <div class="card">        <div class="card-body">            <section id="tarifas" class="my-5">                <div class="container">                    <h2 class="text-secondary fw-bold text-center mb-4">Planes de Publicación</h2>                    <p class="text-muted text-center mb-5">                        Conoce nuestros planes de anuncios y elige el plan que mejor se adapte a tu proyecto o anuncio.                        Publica tu emprendimiento, evento                        o servicio turístico con visibilidad garantizada.                    </p>                    <div class="row g-4 justify-content-center">                        <!-- Plan Diario -->                        <div class="col-12 col-md-6 col-lg-3">                            <div class="card shadow-sm h-100 text-center border-primary">                                <div class="card-body">                                    <h5 class="card-title fw-bold text-primary">Plan Diario</h5>                                    <p class="text-muted small mb-3">Ideal para promociones flash o eventos de un                                        día</p>                                    <h3 class="fw-bold price-highlight mb-3">$5.000</h3>                                    <ul class="list-unstyled text-muted mb-4 small">                                        <li>✔ Publicación 24 horas</li>                                        <li>✔ Presencia en sección elegida</li>                                        <li>✔ Visualización móvil y PC</li>                                    </ul>                                </div>                            </div>                        </div>                        <!-- Plan Semanal -->                        <div class="col-12 col-md-6 col-lg-3">                            <div class="card shadow-sm h-100 text-center border-success">                                <div class="card-body">                                    <h5 class="card-title fw-bold text-success">Plan Semanal</h5>                                    <p class="text-muted small mb-3">Perfecto para lanzamientos o campañas breves                                    </p>                                    <h3 class="fw-bold price-highlight mb-3">$25.000</h3>                                    <ul class="list-unstyled text-muted mb-4 small">                                        <li>✔ Visibilidad 7 días</li>                                        <li>✔ Aparece en página destacada</li>                                        <li>✔ Estadísticas básicas</li>                                    </ul>                                </div>                            </div>                        </div>                        <!-- Plan Mensual -->                        <div class="col-12 col-md-6 col-lg-3">                            <div class="card shadow-sm h-100 text-center border-warning">                                <div class="card-body">                                    <h5 class="card-title fw-bold text-warning">Plan Mensual</h5>                                    <p class="text-muted small mb-3">El más elegido para negocios turísticos</p>                                    <h3 class="fw-bold price-highlight mb-3">$80.000</h3>                                    <ul class="list-unstyled text-muted mb-4 small">                                        <li>✔ 30 días de publicación</li>                                        <li>✔ En portada y sección</li>                                        <li>✔ Reporte de vistas</li>                                    </ul>                                </div>                            </div>                        </div>                        <!-- Plan Anual -->                        <div class="col-12 col-md-6 col-lg-3">                            <div class="card shadow-sm h-100 text-center border-dark">                                <div class="card-body">                                    <h5 class="card-title fw-bold text-dark">Plan Anual</h5>                                    <p class="text-muted small mb-3">Máxima visibilidad para todo el año</p>                                    <h3 class="fw-bold price-highlight mb-3">$700.000</h3>                                    <ul class="list-unstyled text-muted mb-4 small">                                        <li>✔ 12 meses publicados</li>                                        <li>✔ Alta visibilidad garantizada</li>                                        <li>✔ Estadísticas avanzadas + soporte</li>                                    </ul>                                </div>                            </div>                        </div>                    </div>                </div>            </section>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AdminAdsComponent', 'selector': 'app-admin-ads'},{'name': 'AdminAdsEditComponent', 'selector': 'app-admin-ads-edit'},{'name': 'AdminCategoryComponent', 'selector': 'app-admin-category'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AdminLayoutComponent', 'selector': 'app-admin-layout'},{'name': 'AdminPlansComponent', 'selector': 'app-admin-plans'},{'name': 'AdminPostComponent', 'selector': 'app-admin-post'},{'name': 'AdminUserComponent', 'selector': 'app-admin-user'},{'name': 'AdscreateComponent', 'selector': 'app-adscreate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthLayoutComponent', 'selector': 'app-auth-layout'},{'name': 'AvailablePlansComponent', 'selector': 'app-available-plans'},{'name': 'AvisosComponent', 'selector': 'app-avisos'},{'name': 'BienvenidosComponent', 'selector': 'app-bienvenidos'},{'name': 'CalltoactionComponent', 'selector': 'app-calltoaction'},{'name': 'ClientHomeComponent', 'selector': 'app-client-home'},{'name': 'ClientLayoutComponent', 'selector': 'app-client-layout'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeroBahiaComponent', 'selector': 'app-hero-bahia'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainContentComponent', 'selector': 'app-main-content'},{'name': 'MainLayoutComponent', 'selector': 'app-main-layout'},{'name': 'MyAccountComponent', 'selector': 'app-my-account'},{'name': 'MyAdsComponent', 'selector': 'app-my-ads'},{'name': 'NoticiasComponent', 'selector': 'app-noticias'},{'name': 'PlayasComponent', 'selector': 'app-playas'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'RecoveryComponent', 'selector': 'app-recovery'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RestaurantsComponent', 'selector': 'app-restaurants'},{'name': 'RightColumnComponent', 'selector': 'app-right-column'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'ToursComponent', 'selector': 'app-tours'},{'name': 'UserEditComponent', 'selector': 'app-user-edit'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AvailablePlansComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AvailablePlansComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

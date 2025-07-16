@@ -1,0 +1,56 @@
+<!-- Main -->
+<div class="container _min-vh-100 _d-flex _align-items-center justify-content-center mb-4 py-4"
+    style="margin-top: 76px;">
+
+    <div class="card">
+        <div class="card-header">
+            Mis anuncios historial
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead class="table-secondary">
+                            <tr>
+                                <th>#</th>
+                                <th>Fecha Envío</th>
+                                <th>Categoría</th>
+                                <th>Imagen</th>
+                                <th>Fecha Desde</th>
+                                <th>Fecha Hasta</th>
+                                <th>Comentario</th>
+                                <th>URL</th>
+                                <th>Costo (CLP)</th>
+                                <th>Pagado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let ad of ads; let i = index">
+                                <td>{{ i + 1 }}</td>
+                                <td>{{ ad.sendDate }}</td>
+                                <td>
+                                    <span class="badge" [ngClass]="{
+                  'bg-success': ad.category === 'Restaurant',
+                  'bg-info': ad.category === 'Evento',
+                  'bg-primary': ad.category === 'Tour'
+                }">{{ ad.category }}</span>
+                                </td>
+                                <td><img [src]="ad.imageSrc" class="img-fluid w-100" alt="Imagen anuncio"></td>
+                                <td>{{ ad.startDate }}</td>
+                                <td>{{ ad.endDate }}</td>
+                                <td>{{ ad.comment }}</td>
+                                <td><a [href]="ad.url" class="text-decoration-none" target="_blank">Visitar</a></td>
+                                <td>{{ ad.cost }}</td>
+                                <td>
+                                    <span [class]="ad.paid ? 'badge bg-success' : 'badge bg-danger'">
+                                        {{ ad.paid ? 'Sí' : 'No' }}
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+           </div>
+        </div>
+    </div>
+</div>
