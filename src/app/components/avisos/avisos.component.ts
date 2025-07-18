@@ -26,7 +26,6 @@ export class AvisosComponent {
      */
     ngOnInit(): void {
   
-
       // Realizamos una solicitud HTTP GET al archivo JSON que contiene los avisos
       this.http.get<Aviso[]>('https://mautapiao.github.io/jsonbi/avisos.json')
         .subscribe({

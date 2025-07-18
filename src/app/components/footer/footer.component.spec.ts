@@ -11,20 +11,16 @@ describe('FooterComponent', () => {
     await TestBed.configureTestingModule({
       imports: [FooterComponent, RouterTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  //it('Debería crearse correctamente', () => {
-  //  expect(component).toBeTruthy();
-  //});
-
-/** test para que no se visualice debe ser creado */
- it('', () => {
-  expect(component).toBeTruthy();
-});
+  /** test para que no se visualice debe ser creado */
+  it('', () => {
+    expect(component).toBeTruthy();
+  });
 
 });

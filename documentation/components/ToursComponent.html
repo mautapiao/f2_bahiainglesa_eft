@@ -161,6 +161,7 @@
                 <td class="col-md-3">imports</td>
                 <td class="col-md-9">
                             <code>CommonModule</code>
+                            <code>RouterModule</code>
                 </td>
             </tr>
 
@@ -379,17 +380,17 @@ cuando el componente ha sido inicializado.</p>
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { RouterModule } from &#x27;@angular/router&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Tour } from &#x27;../../interfaces/tour&#x27;;
-import { DataResponse } from &#x27;../../interfaces/dataresponse&#x27;;
 /**
  * Componente que muestra la sección de tours destacados en la página principal
  */
 @Component({
   standalone: true,
   selector: &#x27;app-tours&#x27;,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: &#x27;./tours.component.html&#x27;,
   styleUrl: &#x27;./tours.component.scss&#x27;
 })
@@ -424,6 +425,8 @@ export class ToursComponent {
         next: (data) &#x3D;&gt; {
           // Asignamos los datos recibidos a la propiedad tours del componente
           this.tours &#x3D; data;
+
+          console.log(data);
         },
         // error: Se ejecuta cuando hay un error en la petición
         error: (error) &#x3D;&gt; {
@@ -458,11 +461,12 @@ export class ToursComponent {
     &lt;div class&#x3D;&quot;card shadow-sm&quot;&gt;
         &lt;div class&#x3D;&quot;card-body&quot;&gt;
             &lt;div class&#x3D;&quot;row g-4&quot;&gt;
-                &lt;div class&#x3D;&quot;col-12 col-md-4&quot; *ngFor&#x3D;&quot;let t of tours&quot;&gt;
+                &lt;div class&#x3D;&quot;col-12 col-md-4&quot; *ngFor&#x3D;&quot;let tour of tours&quot;&gt;
                     &lt;div class&#x3D;&quot;tour-card fade-in-up-new&quot;&gt;
-                        &lt;i [class]&#x3D;&quot;t.icono + &#x27; display-5 mb-3 text-primary&#x27;&quot;&gt;&lt;/i&gt;
-                        &lt;h4 class&#x3D;&quot;h6 fw-semibold mb-2&quot;&gt;{{ t.titulo }}&lt;/h4&gt;
-                        &lt;p class&#x3D;&quot;small text-muted&quot;&gt;{{  t.detalle }}&lt;/p&gt;
+                        &lt;i [class]&#x3D;&quot;tour.icono +&#x27; fa-2x&#x27;&quot;&gt;&lt;/i&gt;
+                
+                        &lt;h4 class&#x3D;&quot;h6 fw-semibold mb-2&quot;&gt;{{ tour.titulo }}&lt;/h4&gt;
+                        &lt;p class&#x3D;&quot;small text-muted&quot;&gt;{{  tour.detalle }}&lt;/p&gt;
 
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -501,7 +505,7 @@ export class ToursComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Sección Tours --><section id="tours" class="mb-5 fade-in-up-new">    <h3 class="mb-4 text-secondary">Tours Populares</h3>    <div class="card shadow-sm">        <div class="card-body">            <div class="row g-4">                <div class="col-12 col-md-4" *ngFor="let t of tours">                    <div class="tour-card fade-in-up-new">                        <i [class]="t.icono + \' display-5 mb-3 text-primary\'"></i>                        <h4 class="h6 fw-semibold mb-2">{{ t.titulo }}</h4>                        <p class="small text-muted">{{  t.detalle }}</p>                    </div>                </div>            </div>        </div>    </div></section></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- Sección Tours --><section id="tours" class="mb-5 fade-in-up-new">    <h3 class="mb-4 text-secondary">Tours Populares</h3>    <div class="card shadow-sm">        <div class="card-body">            <div class="row g-4">                <div class="col-12 col-md-4" *ngFor="let tour of tours">                    <div class="tour-card fade-in-up-new">                        <i [class]="tour.icono +\' fa-2x\'"></i>                                        <h4 class="h6 fw-semibold mb-2">{{ tour.titulo }}</h4>                        <p class="small text-muted">{{  tour.detalle }}</p>                    </div>                </div>            </div>        </div>    </div></section></div>'
     var COMPONENTS = [{'name': 'AdminAdsComponent', 'selector': 'app-admin-ads'},{'name': 'AdminAdsEditComponent', 'selector': 'app-admin-ads-edit'},{'name': 'AdminCategoryComponent', 'selector': 'app-admin-category'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AdminLayoutComponent', 'selector': 'app-admin-layout'},{'name': 'AdminPlansComponent', 'selector': 'app-admin-plans'},{'name': 'AdminPostComponent', 'selector': 'app-admin-post'},{'name': 'AdminUserComponent', 'selector': 'app-admin-user'},{'name': 'AdscreateComponent', 'selector': 'app-adscreate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthLayoutComponent', 'selector': 'app-auth-layout'},{'name': 'AvailablePlansComponent', 'selector': 'app-available-plans'},{'name': 'AvisosComponent', 'selector': 'app-avisos'},{'name': 'BienvenidosComponent', 'selector': 'app-bienvenidos'},{'name': 'CalltoactionComponent', 'selector': 'app-calltoaction'},{'name': 'ClientHomeComponent', 'selector': 'app-client-home'},{'name': 'ClientLayoutComponent', 'selector': 'app-client-layout'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeroBahiaComponent', 'selector': 'app-hero-bahia'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainContentComponent', 'selector': 'app-main-content'},{'name': 'MainLayoutComponent', 'selector': 'app-main-layout'},{'name': 'MyAccountComponent', 'selector': 'app-my-account'},{'name': 'MyAdsComponent', 'selector': 'app-my-ads'},{'name': 'NoticiasComponent', 'selector': 'app-noticias'},{'name': 'PlayasComponent', 'selector': 'app-playas'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'RecoveryComponent', 'selector': 'app-recovery'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RestaurantsComponent', 'selector': 'app-restaurants'},{'name': 'RightColumnComponent', 'selector': 'app-right-column'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'ToursComponent', 'selector': 'app-tours'},{'name': 'UserEditComponent', 'selector': 'app-user-edit'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ToursComponent'};

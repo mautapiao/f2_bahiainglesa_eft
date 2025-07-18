@@ -130,6 +130,12 @@ mostrando información dinámica sobre publicidad para empresas y emprendimiento
     </p>
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>AfterViewInit</code>
+    </p>
 
 
 <section data-compodoc="block-metadata">
@@ -191,19 +197,140 @@ mostrando información dinámica sobre publicidad para empresas y emprendimiento
     </table>
 </section>
 
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
 
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(renderer: Renderer2)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/main-content/main-content.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor usando Renderer2 para manipular el DOM de forma segura</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>renderer</td>
+                                                  
+                                                        <td>
+                                                                    <code>Renderer2</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="26"
+                                    class="link-to-prism">src/app/main-content/main-content.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>garantiza que el HTML fue renderizado antes de cargar el script</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component,AfterViewInit,Renderer2 } from &#x27;@angular/core&#x27;;
 import { RouterModule } from &#x27;@angular/router&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { PostsComponent } from &quot;../components/posts/posts.component&quot;;
@@ -212,20 +339,39 @@ import { RestaurantsComponent } from &quot;../components/restaurants/restaurants
 import { EventsComponent } from &quot;../components/events/events.component&quot;;
 import { ToursComponent } from &quot;../components/tours/tours.component&quot;;
 import { CalltoactionComponent } from &quot;../components/calltoaction/calltoaction.component&quot;;
-
 /**
  * Representa la sección de contenido principal del sitio
  * mostrando información dinámica sobre publicidad para empresas y emprendimientos.
  */
-
 @Component({
   selector: &#x27;app-main-content&#x27;,
   imports: [RouterModule, CommonModule, PostsComponent, AvisosComponent, RestaurantsComponent, EventsComponent, ToursComponent, CalltoactionComponent],
   templateUrl: &#x27;./main-content.component.html&#x27;,
   styleUrl: &#x27;./main-content.component.scss&#x27;
 })
-export class MainContentComponent {
+export class MainContentComponent implements AfterViewInit {
 
+  /** Constructor usando Renderer2 para manipular el DOM de forma segura */
+  constructor(private renderer: Renderer2) {}
+
+  /** garantiza que el HTML fue renderizado antes de cargar el script */
+  ngAfterViewInit(): void {
+    
+    const scriptId &#x3D; &#x27;weatherwidget-io-js&#x27;;
+
+    if (!document.getElementById(scriptId)) {
+      const script &#x3D; this.renderer.createElement(&#x27;script&#x27;);
+      script.id &#x3D; scriptId;
+      script.src &#x3D; &#x27;https://weatherwidget.io/js/widget.min.js&#x27;;
+      this.renderer.appendChild(document.body, script);
+    } else {
+      /** Si ya está cargado volver a ejecutar el script ...esto puede ser opcional */
+      (window as any).__weatherwidget_init &amp;&amp; (window as any).__weatherwidget_init();
+    }
+  }
+
+
+  
   
 }
 </code></pre>
@@ -233,7 +379,7 @@ export class MainContentComponent {
 
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;!-- Sección Hero --&gt;
-&lt;section id&#x3D;&quot;inicio&quot; class&#x3D;&quot;hero-section rounded mb-5 text-center fade-in-up-new position-relative overflow-hidden&quot;
+&lt;section id&#x3D;&quot;inicio&quot; class&#x3D;&quot;hero-section rounded mb-3 text-center fade-in-up-new position-relative overflow-hidden&quot;
   style&#x3D;&quot;background-image: url(&#x27;/img/logo_bahia_playa.png&#x27;); background-size: cover; background-position: center; min-height: 400px;&quot;&gt;
   &lt;div class&#x3D;&quot;position-absolute top-0 start-0 w-100 h-100&quot; style&#x3D;&quot;background: rgba(44, 62, 80, 0.55);&quot;&gt;&lt;/div&gt;
 
@@ -242,6 +388,16 @@ export class MainContentComponent {
     &lt;p class&#x3D;&quot;fs-5 mb-4&quot;&gt;Los destinos turísticos más increíbles te esperan&lt;/p&gt;
 
   &lt;/div&gt;
+&lt;/section&gt;
+&lt;section class&#x3D;&quot;mb-3&quot;&gt;
+&lt;a class&#x3D;&quot;weatherwidget-io&quot;
+   href&#x3D;&quot;https://forecast7.com/es/n27d10n70d85/bahia-inglesa/&quot;
+   data-label_1&#x3D;&quot;BAHÍA INGLESA&quot;
+   data-label_2&#x3D;&quot;TIEMPO&quot;
+   data-days&#x3D;&quot;5&quot;
+   data-theme&#x3D;&quot;sky&quot;&gt;
+   BAHÍA INGLESA TIEMPO
+&lt;/a&gt;
 &lt;/section&gt;
 
 &lt;app-posts&gt;&lt;/app-posts&gt;
@@ -278,7 +434,7 @@ export class MainContentComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Sección Hero --><section id="inicio" class="hero-section rounded mb-5 text-center fade-in-up-new position-relative overflow-hidden"  style="background-image: url(\'/img/logo_bahia_playa.png\'); background-size: cover; background-position: center; min-height: 400px;">  <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(44, 62, 80, 0.55);"></div>  <div class="container position-relative text-white py-5">    <h1 class="display-4 fw-bold mb-3">Descubre Bahía Inglesa</h1>    <p class="fs-5 mb-4">Los destinos turísticos más increíbles te esperan</p>  </div></section><app-posts></app-posts><app-avisos></app-avisos><app-restaurants></app-restaurants><app-events></app-events><app-tours></app-tours><app-calltoaction></app-calltoaction></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- Sección Hero --><section id="inicio" class="hero-section rounded mb-3 text-center fade-in-up-new position-relative overflow-hidden"  style="background-image: url(\'/img/logo_bahia_playa.png\'); background-size: cover; background-position: center; min-height: 400px;">  <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(44, 62, 80, 0.55);"></div>  <div class="container position-relative text-white py-5">    <h1 class="display-4 fw-bold mb-3">Descubre Bahía Inglesa</h1>    <p class="fs-5 mb-4">Los destinos turísticos más increíbles te esperan</p>  </div></section><section class="mb-3"><a class="weatherwidget-io"   href="https://forecast7.com/es/n27d10n70d85/bahia-inglesa/"   data-label_1="BAHÍA INGLESA"   data-label_2="TIEMPO"   data-days="5"   data-theme="sky">   BAHÍA INGLESA TIEMPO</a></section><app-posts></app-posts><app-avisos></app-avisos><app-restaurants></app-restaurants><app-events></app-events><app-tours></app-tours><app-calltoaction></app-calltoaction></div>'
     var COMPONENTS = [{'name': 'AdminAdsComponent', 'selector': 'app-admin-ads'},{'name': 'AdminAdsEditComponent', 'selector': 'app-admin-ads-edit'},{'name': 'AdminCategoryComponent', 'selector': 'app-admin-category'},{'name': 'AdminHomeComponent', 'selector': 'app-admin-home'},{'name': 'AdminLayoutComponent', 'selector': 'app-admin-layout'},{'name': 'AdminPlansComponent', 'selector': 'app-admin-plans'},{'name': 'AdminPostComponent', 'selector': 'app-admin-post'},{'name': 'AdminUserComponent', 'selector': 'app-admin-user'},{'name': 'AdscreateComponent', 'selector': 'app-adscreate'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthLayoutComponent', 'selector': 'app-auth-layout'},{'name': 'AvailablePlansComponent', 'selector': 'app-available-plans'},{'name': 'AvisosComponent', 'selector': 'app-avisos'},{'name': 'BienvenidosComponent', 'selector': 'app-bienvenidos'},{'name': 'CalltoactionComponent', 'selector': 'app-calltoaction'},{'name': 'ClientHomeComponent', 'selector': 'app-client-home'},{'name': 'ClientLayoutComponent', 'selector': 'app-client-layout'},{'name': 'ContactComponent', 'selector': 'app-contact'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeroBahiaComponent', 'selector': 'app-hero-bahia'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MainContentComponent', 'selector': 'app-main-content'},{'name': 'MainLayoutComponent', 'selector': 'app-main-layout'},{'name': 'MyAccountComponent', 'selector': 'app-my-account'},{'name': 'MyAdsComponent', 'selector': 'app-my-ads'},{'name': 'NoticiasComponent', 'selector': 'app-noticias'},{'name': 'PlayasComponent', 'selector': 'app-playas'},{'name': 'PostsComponent', 'selector': 'app-posts'},{'name': 'RecoveryComponent', 'selector': 'app-recovery'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RestaurantsComponent', 'selector': 'app-restaurants'},{'name': 'RightColumnComponent', 'selector': 'app-right-column'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'ToursComponent', 'selector': 'app-tours'},{'name': 'UserEditComponent', 'selector': 'app-user-edit'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MainContentComponent'};

@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Tour } from '../../interfaces/tour';
-import { DataResponse } from '../../interfaces/dataresponse';
 /**
  * Componente que muestra la sección de tours destacados en la página principal
  */
 @Component({
   standalone: true,
   selector: 'app-tours',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './tours.component.html',
   styleUrl: './tours.component.scss'
 })
@@ -44,6 +44,8 @@ export class ToursComponent {
         next: (data) => {
           // Asignamos los datos recibidos a la propiedad tours del componente
           this.tours = data;
+
+          console.log(data);
         },
         // error: Se ejecuta cuando hay un error en la petición
         error: (error) => {
